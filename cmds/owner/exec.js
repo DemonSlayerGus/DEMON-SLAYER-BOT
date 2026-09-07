@@ -14,6 +14,8 @@ export default {
   isOwner: true,
   run: async ({ msg, sock, args, command, text }) => {
 
+    if (!text) return await sock.sendMessage(msg.chat, { text: 'Ingresa código' }, { quoted: msg })
+
     let code = text
     let _return
     let _syntax = ''
@@ -23,43 +25,21 @@ export default {
 
     try {
       let f = { exports: {} }
-      let exec = new (async () => { }).constructor(
-        'sock',
-        'msg',
-        'require',
-        'args',
-        'module',
-        'exports',
-        code
-      )
-
-      _return = await exec.call(
-        sock,
-        sock,
-        msg,
-        require,
-        args,
-        f,
-        f.exports
-      )
-
+      let exec = new (async () => { }).constructor('sock','msg','require','args','module','exports',code)
+      _return = await exec.call(sock, sock, msg, require, args, f, f.exports)
     } catch (e) {
-      let err = syntaxerror(code, 'Eval Error', {
-        allowReturnOutsideFunction: true,
-        allowAwaitOutsideFunction: true,
-        sourceType: 'module'
-      })
-
-      if (err) {
-        _syntax = '```' + err + '```\n\n'
-      }
-
+      let err = syntaxerror(code, 'Eval Error', { allowReturnOutsideFunction: true, allowAwaitOutsideFunction: true, sourceType: 'module' })
+      if (err) _syntax = '```' + err + '```\n\n'
       _return = e
     }
-    return sock.reply(
-      msg.chat,
-      _syntax + format(_return),
-      msg
-    )
+    
+    let output = _return
+    if (output === undefined) output = 'undefined'
+    if (output === null) output = 'null'
+    if (typeof output === 'object') output = format(output)
+
+    return await sock.sendMessage(msg.chat, { 
+      text: `⚙️ *EVAL RESULT* 🩸\n\n${_syntax}\`\`${output}\`\`` 
+    }, { quoted: msg })
   }
 }
