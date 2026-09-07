@@ -1,68 +1,63 @@
 import db from "#db"
-import axios from "axios"
-import FormData from "form-data"
-
-function formatBytes(bytes) {
-  if (bytes === 0) return "0 B"
-  const sizes = ["B", "KB", "MB", "GB", "TB"]
-  const i = Math.floor(Math.log(bytes) / Math.log(1024))
-  return `${(bytes / 1024 ** i).toFixed(2)} ${sizes[i]}`
-}
-
-function generateUniqueFilename(mime) {
-  const ext = mime.split("/")[1] || "bin"
-  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
-  let id = Array.from({ length: 8 }, () => chars[Math.floor(Math.random() * chars.length)]).join("")
-  return `${id}.${ext}`
-}
-
-async function uploadUguu(buffer, mime) {
-  const form = new FormData()
-  form.append("files[]", buffer, generateUniqueFilename(mime))
-
-  const res = await axios.post("https://uguu.se/upload.php", form, {
-    headers: form.getHeaders(),
-    maxContentLength: Infinity,
-    maxBodyLength: Infinity
-  })
-
-  const data = res.data
-  const url = data?.files?.[0]?.url
-  if (!url) throw new Error("Respuesta inválida de Uguu: " + JSON.stringify(data))
-  return url
-}
+import fetch from 'node-fetch'
+import FormData from 'form-data'
 
 export default {
-  command: ["tourl"],
-  category: "utils",
-  run: async ({ msg, sock, args, command, text, usedPrefix: prefix }) => {
-    const q = msg.quoted || msg
-    const mime = (q.msg || q).mimetype || ""
-    if (!mime) {
-      return sock.reply(
-        m.chat,
-        `✿ Responde a una imagen o video con *${prefix + command}* para convertirlo en URL.`,
-        m
-      )
-    }
-
+  command: ['tourl', 'tourlperma', 'up'],
+  category: 'tools',
+  run: async ({ msg, sock, args }) => {
     try {
-      const media = await q.download()
-      if (!media) return msg.reply("ꕥ No se pudo descargar el archivo.")
+      if (!msg.quoted) {
+        return msg.reply('《✧》 Responde a una imagen, video o sticker para subirlo.')
+      }
 
-      const link = await uploadUguu(media, mime)
-      const userName = msg.pushName || "Usuario"
+      const quoted = msg.quoted
+      let mediaBuffer = null
+      let mimeType = quoted.mime || quoted.mimetype || ''
 
-      const upload = `𖹭 ❀ *Upload To UGUU*\n\n` +
-        `ׅ  ׄ  ✿   ׅ り *Link ›* ${link}\n` +
-        `ׅ  ׄ  ✿   ׅ り *Peso ›* ${formatBytes(media.length)}\n` +
-        `ׅ  ׄ  ✿   ׅ り *Tipo ›* ${mime.split("/")[1]?.toUpperCase() || "UNKNOWN"}\n` +
-        `ׅ  ׄ  ✿   ׅ り *Solicitado por ›* ${userName}\n\n${dev}`
+      if (typeof quoted.download === 'function') {
+        mediaBuffer = await quoted.download()
+      }
 
-      await msg.reply(upload)
+      if (!mediaBuffer && quoted.mediaBuffer) {
+        mediaBuffer = quoted.mediaBuffer
+        if (typeof mediaBuffer === 'string') {
+          mediaBuffer = Buffer.from(mediaBuffer, 'base64')
+        }
+      }
+
+      if (!mediaBuffer || mediaBuffer.length === 0) {
+        return msg.reply('《✧》 No se pudo obtener el contenido.')
+      }
+
+      await msg.react('⏳')
+
+      let form = new FormData()
+      let ext = mimeType.split('/')[1] || 'bin'
+      form.append('file', mediaBuffer, `file.${ext}`)
+
+      let res = await fetch('https://nyxdlapi.vercel.app/api/tools/tourl?apikey=nyx_787L2nSRmybr98xh2T7eR7Xr2WUXKdyx', {
+        method: 'POST',
+        body: form
+      })
+
+      let json = await res.json()
+
+      if (!json.status) {
+        await msg.react('❌')
+        return msg.reply(`《✧》 Error: ${json.creator}`)
+      }
+
+      let url = json.result.files[0].url
+      let name = json.result.files[0].name
+      let size = (json.result.files[0].size / 1024).toFixed(2)
+
+      await msg.react('✅')
+      return msg.reply(`*TOURL PERMANENTE* 🩸\n\n*Archivo:* ${name}\n*Peso:* ${size} KB\n*Link:* ${url}\n\n*Host:* Vercel Storage\n*No expira*`)
+
     } catch (e) {
-      console.error(e)
-      await msg.reply(`${msgglobal}`)
+      await msg.react('❌')
+      return msg.reply(`《✧》 Error: ${e.message}`)
     }
   }
 }
