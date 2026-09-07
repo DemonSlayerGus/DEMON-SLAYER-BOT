@@ -21,7 +21,6 @@ export default {
       const botname = 'DEMON SLAYER BOT';
       const imageUrl = 'https://tinyurl.com/27qw997h';
       const owner = 'LORD GUS';
-      const link = 'https://chat.whatsapp.com/L9ngYDb5e574vNddUJGD1t?s=cl&p=a&ilr=0';
 
       const canalId = '120363428584260360@newsletter';
       const canalName = '✧ DEMON SLAYER BOT ✧';
@@ -29,74 +28,52 @@ export default {
       const botType = 'Principal';
       const allUsers = await db.getUser();
       const users = Object.keys(allUsers || {}).length || 0;
-      const time = sock.uptime? formatearMs(Date.now() - sock.uptime) : 'Desconocido';
-      const device = getDevice(msg.key.id);
 
-      // HEADER GOD
-      let menu = `*╭━━━━━━━━━━━━━━━╮*
-*┃* 🩸 *DEMON SLAYER BOT* 🩸
-*╰━━━━━━━━━━━━━━━╯*
+      let menu = `╭❤️ *DEMON SLAYER BOT* ❤️╮
+*Hola ${msg.pushName}*
+*Bienvenido al Menú*
 
-*꒰ঌ 🥷 ໒꒱ Konichiwa* ${msg.pushName} *-san*
-*꒰ঌ ⚔️ ໒꒱ Bienvenido al Cuerpo de Cazadores*
-
-*╭─〔 📜 DATOS DEL CUARTEL 〕─╮*
-*│* 👑 *Comandante:* ${owner}
-*│* 🤖 *Tipo:* ${botType}
-*│* 📱 *Dispositivo:* ${device}
-*│* 📅 *Fecha:* ${fecha}
-*│* 🕐 *Hora:* ${hora}
-*│* 👥 *Cazadores:* ${users.toLocaleString()}
-*│* ⏱️ *Uptime:* ${time}
-*│* 🏯 *Sede:* ${link}
-*╰────────────────────╯*
-
-*✧━━━━━━━━━━━✧*
-* TÉCNICAS DISPONIBLES*
-*✧━━━━━━━━━━━✧*
+╭─📜 *INFORMACIÓN* ─╮
+│ 👑 *Owner:* ${owner}
+│ 🤖 *Tipo:* ${botType}
+│ 📅 *Fecha:* ${fecha}
+│ 🕐 *Hora:* ${hora}
+│ 👥 *Usuarios:* ${users.toLocaleString()}
+╰──────────────────╯
+✧ *MENÚ DE COMANDOS* ✧
 `;
 
       const categoryArg = args[0]?.toLowerCase();
       const categories = {};
       for (const cmd of commands) {
         const category = cmd.category || 'otros';
-        if (!categories[category]) categories[category] = [];
-        categories[category].push(cmd);
+        if (!categories[category]) categories[category] = []
+        categories[category].push(cmd)
       }
 
       if (categoryArg &&!categories[categoryArg]) {
-        return await msg.reply(`《🩸》 La *Técnica ${categoryArg}* no fue encontrada.\nUsa: *${prefix}menu* para ver todas`);
+        return await msg.reply(`🩸 La categoría *${categoryArg}* no existe.\nUsa: *${prefix}menu*`)
       }
 
-      const catEmojis = {
-        info: '📜', downloader: '📥', fun: '🎭', group: '👥',
-        owner: '👑', ai: '🤖', sticker: '🏷️', search: '🔍', otros: '⚔️'
-      }
-
-      const catNamesDS = {
-        info: 'INFORMACIÓN', downloader: 'DESCARGAS', fun: 'ENTRETENIMIENTO',
-        group: 'CUARTEL', owner: 'COMANDANTE', ai: 'IA HASHIRA',
-        sticker: 'CALCOMANÍAS', search: 'BÚSQUEDA', otros: 'TÉCNICAS'
-      }
+      const catEmojis = {info: '📜', downloader: '📥', fun: '🎭', group: '👥', owner: '👑', ai: '🤖', sticker: '🏷️', search: '🔍', otros: '⚔️'}
+      const catNamesDS = {info: 'INFORMACIÓN', downloader: 'DESCARGAS', fun: 'DIVERSIÓN', group: 'GRUPOS', owner: 'OWNER', ai: 'IA', sticker: 'STICKERS', search: 'BÚSQUEDAS', otros: 'OTROS'}
 
       for (const [category, cmds] of Object.entries(categories)) {
         if (categoryArg && category.toLowerCase()!== categoryArg) continue;
         const catName = catNamesDS[category] || category.toUpperCase();
         const emoji = catEmojis[category] || '⚔️';
-
-        menu += `\n*╭───〔 ${emoji} ${catName} 〕───╮*\n`;
+        menu += `\n╭─${emoji} *${catName}* ─╮\n`;
         cmds.forEach((cmd) => {
           const aliases = cmd.alias.map((a) => {
             const aliasClean = a.split(/[\/#!+.\-]+/).pop().toLowerCase()
             return `*${prefix}${aliasClean}*`
           }).join(' │ ')
-          menu += `*│* 🗡️ ${aliases}${cmd.uso? ` *${cmd.uso}*` : ''}\n`
-          menu += `*│* └─ ${cmd.desc}\n`
+          menu += `│ 🗡️ ${aliases}${cmd.uso? ` *${cmd.uso}*` : ''}\n│ └─ ${cmd.desc}\n`
         })
-        menu += `*╰─────────────────╯*\n`
+        menu += `╰──────────────────╯`
       }
 
-      menu += `\n*꒰ঌ 🩸 ໒꒱ "Respira... y corta"* ꒰ঌ 🩸 ໒꒱\n*✧ ${botname} - by ${owner} ✧*`;
+      menu += `\n\n꒰ "La fuerza nace de la voluntad" ꒱\n✧ ${botname} | by ${owner} ✧`;
 
       await sock.sendMessage(msg.chat, {
         image: { url: imageUrl },
@@ -114,7 +91,7 @@ export default {
 
     } catch (e) {
       console.log(e)
-      await msg.reply('《🩸》 Error al cargar el menú: ' + e.message);
+      await msg.reply('🩸 Error al cargar el menú: ' + e.message);
     }
   },
 };
