@@ -19,7 +19,7 @@ export default {
       const botId = sock?.user?.id.split(':')[0] + '@s.whatsapp.net' || '';
       const botSettings = await db.getSettings(botId);
       const botname = 'DEMON SLAYER BOT';
-      const imageUrl = 'https://tinyurl.com/27qw997h';
+      const imageUrl = 'https://d0mwa043ankuvadx.public.blob.vercel-storage.com/nyx/L0N3zLc.jpeg';
       const owner = 'LORD GUS';
 
       const canalId = '120363428584260360@newsletter';
