@@ -18,11 +18,11 @@
     },
     "51980730680@s.whatsapp.net": {
       "name": "GUS",
-      "exp": 4258,
+      "exp": 4450,
       "sugCooldown": 0,
       "level": 6,
       "Subs": 0,
-      "usedcommands": 88,
+      "usedcommands": 91,
       "pasatiempo": "",
       "description": "",
       "marry": "",
@@ -162,11 +162,11 @@
     },
     "584242773183@s.whatsapp.net": {
       "name": "×͜×𝙮𝙤𝙨𝙪𝙚ツ",
-      "exp": 1052,
+      "exp": 1099,
       "sugCooldown": 0,
       "level": 3,
       "Subs": 0,
-      "usedcommands": 22,
+      "usedcommands": 23,
       "pasatiempo": "",
       "description": "",
       "marry": "",
@@ -1079,11 +1079,11 @@
       "buyCooldown": 0,
       "stats": {
         "2026-09-07": {
-          "msgs": 200,
-          "cmds": 24
+          "msgs": 206,
+          "cmds": 25
         }
       },
-      "usedTime": "2026-09-07T16:52:00.486Z",
+      "usedTime": "2026-09-07T16:53:36.655Z",
       "warnings": [],
       "chat_id": "120363431418766800@g.us",
       "user_id": "584242773183@s.whatsapp.net"
@@ -1112,11 +1112,11 @@
       "buyCooldown": 0,
       "stats": {
         "2026-09-07": {
-          "msgs": 150,
-          "cmds": 47
+          "msgs": 153,
+          "cmds": 50
         }
       },
-      "usedTime": "2026-09-07T16:51:01.585Z",
+      "usedTime": "2026-09-07T16:54:30.709Z",
       "warnings": [],
       "chat_id": "120363431418766800@g.us",
       "user_id": "51980730680@s.whatsapp.net"
@@ -1211,7 +1211,7 @@
       "buyCooldown": 0,
       "stats": {
         "2026-09-07": {
-          "msgs": 83,
+          "msgs": 88,
           "cmds": 0
         }
       },
@@ -1277,7 +1277,7 @@
       "buyCooldown": 0,
       "stats": {
         "2026-09-07": {
-          "msgs": 58,
+          "msgs": 60,
           "cmds": 0
         }
       },
@@ -1625,7 +1625,7 @@
         "#",
         "."
       ],
-      "commandsejecut": 110,
+      "commandsejecut": 114,
       "type": "Sub",
       "link": "https://api.stellarwa.xyz",
       "banner": "https://nube.stellarwa.xyz/rf/Zllhqcb8iUug.jpg",
