@@ -12,8 +12,10 @@ export default {
   isOwner: true,
   run: async ({ msg, sock }) => {
     await sock.sendMessage(msg.key.remoteJid, { text: '⏳ Subiendo cambios a Github... Espera 15s' }, { quoted: msg })
-    
-    exec('git add . && git commit -m "update desde whatsapp" && git push origin main', async (error, stdout, stderr) => {
+
+    const gitCommand = 'git config user.email "bot@whatsapp.local" && git config user.name "WhatsApp Bot" && git add . && git commit -m "update desde whatsapp" && git push origin main'
+
+    exec(gitCommand, async (error, stdout, stderr) => {
 
       let msg2 = ''
       if (error) {
