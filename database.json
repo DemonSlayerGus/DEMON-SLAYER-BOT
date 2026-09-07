@@ -18,11 +18,11 @@
     },
     "51980730680@s.whatsapp.net": {
       "name": "GUS",
-      "exp": 3451,
+      "exp": 3522,
       "sugCooldown": 0,
       "level": 5,
       "Subs": 0,
-      "usedcommands": 73,
+      "usedcommands": 75,
       "pasatiempo": "",
       "description": "",
       "marry": "",
@@ -1023,7 +1023,7 @@
       "buyCooldown": 0,
       "stats": {
         "2026-09-07": {
-          "msgs": 146,
+          "msgs": 147,
           "cmds": 14
         }
       },
@@ -1056,11 +1056,11 @@
       "buyCooldown": 0,
       "stats": {
         "2026-09-07": {
-          "msgs": 120,
-          "cmds": 34
+          "msgs": 122,
+          "cmds": 36
         }
       },
-      "usedTime": "2026-09-07T16:29:46.082Z",
+      "usedTime": "2026-09-07T16:30:26.677Z",
       "warnings": [],
       "chat_id": "120363431418766800@g.us",
       "user_id": "51980730680@s.whatsapp.net"
@@ -1188,7 +1188,7 @@
       "buyCooldown": 0,
       "stats": {
         "2026-09-07": {
-          "msgs": 70,
+          "msgs": 71,
           "cmds": 0
         }
       },
@@ -1485,7 +1485,7 @@
       "buyCooldown": 0,
       "stats": {
         "2026-09-07": {
-          "msgs": 6,
+          "msgs": 8,
           "cmds": 0
         }
       },
@@ -1503,7 +1503,7 @@
         "#",
         "."
       ],
-      "commandsejecut": 85,
+      "commandsejecut": 87,
       "type": "Sub",
       "link": "https://api.stellarwa.xyz",
       "banner": "https://nube.stellarwa.xyz/rf/Zllhqcb8iUug.jpg",
