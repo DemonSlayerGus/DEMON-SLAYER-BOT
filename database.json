@@ -18,11 +18,11 @@
     },
     "51980730680@s.whatsapp.net": {
       "name": "GUS",
-      "exp": 4450,
+      "exp": 4604,
       "sugCooldown": 0,
       "level": 6,
       "Subs": 0,
-      "usedcommands": 91,
+      "usedcommands": 96,
       "pasatiempo": "",
       "description": "",
       "marry": "",
@@ -129,12 +129,12 @@
       "id": "224360904306747@lid"
     },
     "5215658414636@s.whatsapp.net": {
-      "name": "",
-      "exp": 0,
+      "name": "Santiago",
+      "exp": 22,
       "sugCooldown": 0,
       "level": 0,
       "Subs": 0,
-      "usedcommands": 0,
+      "usedcommands": 1,
       "pasatiempo": "",
       "description": "",
       "marry": "",
@@ -162,11 +162,11 @@
     },
     "584242773183@s.whatsapp.net": {
       "name": "×͜×𝙮𝙤𝙨𝙪𝙚ツ",
-      "exp": 1145,
+      "exp": 1209,
       "sugCooldown": 0,
       "level": 3,
       "Subs": 0,
-      "usedcommands": 24,
+      "usedcommands": 27,
       "pasatiempo": "",
       "description": "",
       "marry": "",
@@ -193,12 +193,12 @@
       "id": "5493764223147@s.whatsapp.net"
     },
     "5219541555733@s.whatsapp.net": {
-      "name": "",
-      "exp": 0,
+      "name": "GAVC",
+      "exp": 64,
       "sugCooldown": 0,
       "level": 0,
       "Subs": 0,
-      "usedcommands": 0,
+      "usedcommands": 1,
       "pasatiempo": "",
       "description": "",
       "marry": "",
@@ -399,6 +399,86 @@
       "metadatos": null,
       "metadatos2": null,
       "id": "120363368618055639@newsletter"
+    },
+    "5212225237061@s.whatsapp.net": {
+      "name": "👹",
+      "exp": 119,
+      "sugCooldown": 0,
+      "level": 1,
+      "Subs": 0,
+      "usedcommands": 2,
+      "pasatiempo": "",
+      "description": "",
+      "marry": "",
+      "genre": "",
+      "birth": "",
+      "metadatos": null,
+      "metadatos2": null,
+      "id": "5212225237061@s.whatsapp.net"
+    },
+    "5216623572734@s.whatsapp.net": {
+      "name": "{~💜BrUjItA💜~}",
+      "exp": 45,
+      "sugCooldown": 0,
+      "level": 0,
+      "Subs": 0,
+      "usedcommands": 2,
+      "pasatiempo": "",
+      "description": "",
+      "marry": "",
+      "genre": "",
+      "birth": "",
+      "metadatos": null,
+      "metadatos2": null,
+      "id": "5216623572734@s.whatsapp.net"
+    },
+    "5218461025120@s.whatsapp.net": {
+      "name": "Abraham! 🗣️",
+      "exp": 140,
+      "sugCooldown": 0,
+      "level": 1,
+      "Subs": 0,
+      "usedcommands": 3,
+      "pasatiempo": "",
+      "description": "",
+      "marry": "",
+      "genre": "",
+      "birth": "",
+      "metadatos": null,
+      "metadatos2": null,
+      "id": "5218461025120@s.whatsapp.net"
+    },
+    "5493777694687@s.whatsapp.net": {
+      "name": "",
+      "exp": 0,
+      "sugCooldown": 0,
+      "level": 0,
+      "Subs": 0,
+      "usedcommands": 0,
+      "pasatiempo": "",
+      "description": "",
+      "marry": "",
+      "genre": "",
+      "birth": "",
+      "metadatos": null,
+      "metadatos2": null,
+      "id": "5493777694687@s.whatsapp.net"
+    },
+    "5212741893346@s.whatsapp.net": {
+      "name": "",
+      "exp": 0,
+      "sugCooldown": 0,
+      "level": 0,
+      "Subs": 0,
+      "usedcommands": 0,
+      "pasatiempo": "",
+      "description": "",
+      "marry": "",
+      "genre": "",
+      "birth": "",
+      "metadatos": null,
+      "metadatos2": null,
+      "id": "5212741893346@s.whatsapp.net"
     }
   },
   "chats": {
@@ -689,6 +769,30 @@
       "scheduledActions": [],
       "groupOpenStatus": 0,
       "id": "120363368618055639@newsletter"
+    },
+    "120363409845238176@g.us": {
+      "bannedGrupo": 0,
+      "welcomeMessage": "",
+      "byeMessage": "",
+      "welcome": 0,
+      "goodbye": 0,
+      "antinsfw": 0,
+      "nsfw": 0,
+      "alerts": 0,
+      "gacha": 1,
+      "rpg": 1,
+      "adminonly": 0,
+      "expulsar": 0,
+      "warnLimit": 0,
+      "primaryBot": null,
+      "antilinks": 1,
+      "antistatus": 0,
+      "personajesReservados": [],
+      "intercambios": [],
+      "timeTrade": 0,
+      "scheduledActions": [],
+      "groupOpenStatus": 0,
+      "id": "120363409845238176@g.us"
     }
   },
   "chat_users": {
@@ -716,7 +820,7 @@
       "buyCooldown": 0,
       "stats": {
         "2026-09-07": {
-          "msgs": 22,
+          "msgs": 26,
           "cmds": 3
         }
       },
@@ -749,11 +853,11 @@
       "buyCooldown": 0,
       "stats": {
         "2026-09-07": {
-          "msgs": 63,
-          "cmds": 43
+          "msgs": 68,
+          "cmds": 48
         }
       },
-      "usedTime": "2026-09-07T16:36:13.096Z",
+      "usedTime": "2026-09-07T17:39:18.584Z",
       "warnings": [],
       "chat_id": "120363428996880036@g.us",
       "user_id": "51980730680@s.whatsapp.net"
@@ -947,7 +1051,7 @@
       "buyCooldown": 0,
       "stats": {
         "2026-09-07": {
-          "msgs": 10,
+          "msgs": 13,
           "cmds": 0
         }
       },
@@ -1013,11 +1117,11 @@
       "buyCooldown": 0,
       "stats": {
         "2026-09-07": {
-          "msgs": 64,
-          "cmds": 4
+          "msgs": 82,
+          "cmds": 5
         }
       },
-      "usedTime": null,
+      "usedTime": "2026-09-07T17:04:07.972Z",
       "warnings": [],
       "chat_id": "120363430974350908@g.us",
       "user_id": "5215658414636@s.whatsapp.net"
@@ -1079,11 +1183,11 @@
       "buyCooldown": 0,
       "stats": {
         "2026-09-07": {
-          "msgs": 211,
-          "cmds": 26
+          "msgs": 262,
+          "cmds": 29
         }
       },
-      "usedTime": "2026-09-07T16:55:35.908Z",
+      "usedTime": "2026-09-07T17:11:05.977Z",
       "warnings": [],
       "chat_id": "120363431418766800@g.us",
       "user_id": "584242773183@s.whatsapp.net"
@@ -1112,7 +1216,7 @@
       "buyCooldown": 0,
       "stats": {
         "2026-09-07": {
-          "msgs": 154,
+          "msgs": 181,
           "cmds": 50
         }
       },
@@ -1211,11 +1315,11 @@
       "buyCooldown": 0,
       "stats": {
         "2026-09-07": {
-          "msgs": 88,
-          "cmds": 0
+          "msgs": 114,
+          "cmds": 1
         }
       },
-      "usedTime": null,
+      "usedTime": "2026-09-07T17:02:24.143Z",
       "warnings": [],
       "chat_id": "120363430974350908@g.us",
       "user_id": "5219541555733@s.whatsapp.net"
@@ -1244,7 +1348,7 @@
       "buyCooldown": 0,
       "stats": {
         "2026-09-07": {
-          "msgs": 84,
+          "msgs": 100,
           "cmds": 0
         }
       },
@@ -1442,7 +1546,7 @@
       "buyCooldown": 0,
       "stats": {
         "2026-09-07": {
-          "msgs": 9,
+          "msgs": 11,
           "cmds": 0
         }
       },
@@ -1508,7 +1612,7 @@
       "buyCooldown": 0,
       "stats": {
         "2026-09-07": {
-          "msgs": 9,
+          "msgs": 13,
           "cmds": 0
         }
       },
@@ -1541,7 +1645,7 @@
       "buyCooldown": 0,
       "stats": {
         "2026-09-07": {
-          "msgs": 8,
+          "msgs": 14,
           "cmds": 0
         }
       },
@@ -1615,6 +1719,171 @@
       "warnings": [],
       "chat_id": "120363368618055639@newsletter",
       "user_id": "120363368618055639@newsletter"
+    },
+    "120363430974350908@g.us:5212225237061@s.whatsapp.net": {
+      "coins": 0,
+      "bank": 0,
+      "lastdungeon": 0,
+      "lasthunt": 0,
+      "lastfish": 0,
+      "lastslot": 0,
+      "dailyStreak": 0,
+      "characters": [],
+      "personajesEnVenta": [],
+      "crimeCooldown": 0,
+      "mineCooldown": 0,
+      "ritualCooldown": 0,
+      "workCooldown": 0,
+      "rtCooldown": 0,
+      "slutCooldown": 0,
+      "roboCooldown": 0,
+      "pptCooldown": 0,
+      "lastDaily": 0,
+      "voteCooldown": 0,
+      "rwCooldown": 0,
+      "buyCooldown": 0,
+      "stats": {
+        "2026-09-07": {
+          "msgs": 48,
+          "cmds": 7
+        }
+      },
+      "usedTime": "2026-09-07T17:02:03.318Z",
+      "warnings": [],
+      "chat_id": "120363430974350908@g.us",
+      "user_id": "5212225237061@s.whatsapp.net"
+    },
+    "120363430974350908@g.us:5216623572734@s.whatsapp.net": {
+      "coins": 0,
+      "bank": 0,
+      "lastdungeon": 0,
+      "lasthunt": 0,
+      "lastfish": 0,
+      "lastslot": 0,
+      "dailyStreak": 0,
+      "characters": [],
+      "personajesEnVenta": [],
+      "crimeCooldown": 0,
+      "mineCooldown": 0,
+      "ritualCooldown": 0,
+      "workCooldown": 0,
+      "rtCooldown": 0,
+      "slutCooldown": 0,
+      "roboCooldown": 0,
+      "pptCooldown": 0,
+      "lastDaily": 0,
+      "voteCooldown": 0,
+      "rwCooldown": 0,
+      "buyCooldown": 0,
+      "stats": {
+        "2026-09-07": {
+          "msgs": 48,
+          "cmds": 7
+        }
+      },
+      "usedTime": "2026-09-07T17:03:39.470Z",
+      "warnings": [],
+      "chat_id": "120363430974350908@g.us",
+      "user_id": "5216623572734@s.whatsapp.net"
+    },
+    "120363409845238176@g.us:5218461025120@s.whatsapp.net": {
+      "coins": 0,
+      "bank": 0,
+      "lastdungeon": 0,
+      "lasthunt": 0,
+      "lastfish": 0,
+      "lastslot": 0,
+      "dailyStreak": 0,
+      "characters": [],
+      "personajesEnVenta": [],
+      "crimeCooldown": 0,
+      "mineCooldown": 0,
+      "ritualCooldown": 0,
+      "workCooldown": 0,
+      "rtCooldown": 0,
+      "slutCooldown": 0,
+      "roboCooldown": 0,
+      "pptCooldown": 0,
+      "lastDaily": 0,
+      "voteCooldown": 0,
+      "rwCooldown": 0,
+      "buyCooldown": 0,
+      "stats": {
+        "2026-09-07": {
+          "msgs": 48,
+          "cmds": 7
+        }
+      },
+      "usedTime": "2026-09-07T17:03:28.953Z",
+      "warnings": [],
+      "chat_id": "120363409845238176@g.us",
+      "user_id": "5218461025120@s.whatsapp.net"
+    },
+    "120363430974350908@g.us:5493777694687@s.whatsapp.net": {
+      "coins": 0,
+      "bank": 0,
+      "lastdungeon": 0,
+      "lasthunt": 0,
+      "lastfish": 0,
+      "lastslot": 0,
+      "dailyStreak": 0,
+      "characters": [],
+      "personajesEnVenta": [],
+      "crimeCooldown": 0,
+      "mineCooldown": 0,
+      "ritualCooldown": 0,
+      "workCooldown": 0,
+      "rtCooldown": 0,
+      "slutCooldown": 0,
+      "roboCooldown": 0,
+      "pptCooldown": 0,
+      "lastDaily": 0,
+      "voteCooldown": 0,
+      "rwCooldown": 0,
+      "buyCooldown": 0,
+      "stats": {
+        "2026-09-07": {
+          "msgs": 48,
+          "cmds": 7
+        }
+      },
+      "usedTime": null,
+      "warnings": [],
+      "chat_id": "120363430974350908@g.us",
+      "user_id": "5493777694687@s.whatsapp.net"
+    },
+    "120363430974350908@g.us:5212741893346@s.whatsapp.net": {
+      "coins": 0,
+      "bank": 0,
+      "lastdungeon": 0,
+      "lasthunt": 0,
+      "lastfish": 0,
+      "lastslot": 0,
+      "dailyStreak": 0,
+      "characters": [],
+      "personajesEnVenta": [],
+      "crimeCooldown": 0,
+      "mineCooldown": 0,
+      "ritualCooldown": 0,
+      "workCooldown": 0,
+      "rtCooldown": 0,
+      "slutCooldown": 0,
+      "roboCooldown": 0,
+      "pptCooldown": 0,
+      "lastDaily": 0,
+      "voteCooldown": 0,
+      "rwCooldown": 0,
+      "buyCooldown": 0,
+      "stats": {
+        "2026-09-07": {
+          "msgs": 48,
+          "cmds": 7
+        }
+      },
+      "usedTime": null,
+      "warnings": [],
+      "chat_id": "120363430974350908@g.us",
+      "user_id": "5212741893346@s.whatsapp.net"
     }
   },
   "settings": {
@@ -1625,7 +1894,7 @@
         "#",
         "."
       ],
-      "commandsejecut": 115,
+      "commandsejecut": 132,
       "type": "Sub",
       "link": "https://api.stellarwa.xyz",
       "banner": "https://nube.stellarwa.xyz/rf/Zllhqcb8iUug.jpg",
