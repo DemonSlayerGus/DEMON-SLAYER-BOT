@@ -2,7 +2,7 @@ import fs from 'fs';
 import { watchFile, unwatchFile } from 'fs'
 import { fileURLToPath } from 'url'
 
-global.owner = ['51980730680']
+global.owner = ['51980730680', '584242773183'] // <-- ya tienes los 2
 
 global.api = {
   url: 'https://api.stellarwa.xyz',
@@ -21,7 +21,7 @@ global.mess = {
 }
 
 global.my = {
-ch: "120363407128588763@newsletter"
+  ch: "120363407128588763@newsletter"
 }
 
 let file = fileURLToPath(import.meta.url)

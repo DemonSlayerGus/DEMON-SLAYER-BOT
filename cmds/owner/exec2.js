@@ -1,15 +1,14 @@
-import db from "#db"
 import cp from 'child_process'
 import { promisify } from 'util'
 const exec = promisify(cp.exec)
 
 export default {
-  command: ['r'],
+  command: ['r', 'run', 'shell'],
   isOwner: true,
   run: async ({ msg, sock, args }) => {
     const cmd = args.join(' ').trim()
     if (!cmd) {
-      return // sock.reply(msg.chat, '❌ Escribe un comando para ejecutar.\nEjemplo: .r ls', msg)
+      return await sock.sendMessage(msg.chat, { text: '❌ Escribe un comando para ejecutar.\nEjemplo: .r ls' }, { quoted: msg })
     }
     let result
     try {
@@ -18,11 +17,11 @@ export default {
       result = e
     }
     const { stdout, stderr } = result
-    if (stdout?.trim()) {
-      sock.reply(msg.chat, stdout.trim(), msg)
-    }
-    if (stderr?.trim()) {
-      sock.reply(msg.chat, stderr.trim(), msg)
-    }
+    let output = ''
+    if (stdout?.trim()) output += `📤 *STDOUT:*\n\`\`${stdout.trim()}\`\`\`\n`
+    if (stderr?.trim()) output += `📥 *STDERR:*\n\`\`\`${stderr.trim()}\`\`\``
+    if (!output) output = '✅ Comando ejecutado sin salida'
+
+    await sock.sendMessage(msg.chat, { text: output }, { quoted: msg })
   }
 }
