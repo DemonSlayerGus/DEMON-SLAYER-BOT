@@ -10,7 +10,7 @@ global.api = {
 }
 
 global.msgglobal = '✿⸝꙳.˖ Ocurrió un problema, contacte al creador'
-global.dev = `★彡[LORD GUSxx]彡★`
+global.dev = `🚀Descarga Completa`
 
 global.mess = {
   socket: '(∩´͈ ᴖ `͈∩ ྀི) Este comando solo puede ser ejecutado por un Socket.',
