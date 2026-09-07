@@ -26,7 +26,7 @@ export default {
       const canalId = '120363428584260360@newsletter';
       const canalName = '✧ DEMON SLAYER BOT ✧';
 
-      const botType = 'Cazador de Demonios';
+      const botType = 'Principal';
       const allUsers = await db.getUser();
       const users = Object.keys(allUsers || {}).length || 0;
       const time = sock.uptime? formatearMs(Date.now() - sock.uptime) : 'Desconocido';
