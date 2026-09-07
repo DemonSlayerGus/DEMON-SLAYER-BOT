@@ -18,11 +18,11 @@
     },
     "51980730680@s.whatsapp.net": {
       "name": "GUS",
-      "exp": 6412,
+      "exp": 6753,
       "sugCooldown": 0,
-      "level": 7,
+      "level": 8,
       "Subs": 0,
-      "usedcommands": 133,
+      "usedcommands": 138,
       "pasatiempo": "",
       "description": "",
       "marry": "",
@@ -879,6 +879,54 @@
       "metadatos": null,
       "metadatos2": null,
       "id": "145256280506551@lid"
+    },
+    "209247249920202@lid": {
+      "name": "",
+      "exp": 0,
+      "sugCooldown": 0,
+      "level": 0,
+      "Subs": 0,
+      "usedcommands": 0,
+      "pasatiempo": "",
+      "description": "",
+      "marry": "",
+      "genre": "",
+      "birth": "",
+      "metadatos": null,
+      "metadatos2": null,
+      "id": "209247249920202@lid"
+    },
+    "50587762370@s.whatsapp.net": {
+      "name": "",
+      "exp": 0,
+      "sugCooldown": 0,
+      "level": 0,
+      "Subs": 0,
+      "usedcommands": 0,
+      "pasatiempo": "",
+      "description": "",
+      "marry": "",
+      "genre": "",
+      "birth": "",
+      "metadatos": null,
+      "metadatos2": null,
+      "id": "50587762370@s.whatsapp.net"
+    },
+    "120363421367237421@newsletter": {
+      "name": "",
+      "exp": 0,
+      "sugCooldown": 0,
+      "level": 0,
+      "Subs": 0,
+      "usedcommands": 0,
+      "pasatiempo": "",
+      "description": "",
+      "marry": "",
+      "genre": "",
+      "birth": "",
+      "metadatos": null,
+      "metadatos2": null,
+      "id": "120363421367237421@newsletter"
     }
   },
   "chats": {
@@ -1217,6 +1265,30 @@
       "scheduledActions": [],
       "groupOpenStatus": 0,
       "id": "120363411536659635@g.us"
+    },
+    "120363421367237421@newsletter": {
+      "bannedGrupo": 0,
+      "welcomeMessage": "",
+      "byeMessage": "",
+      "welcome": 0,
+      "goodbye": 0,
+      "antinsfw": 0,
+      "nsfw": 0,
+      "alerts": 0,
+      "gacha": 1,
+      "rpg": 1,
+      "adminonly": 0,
+      "expulsar": 0,
+      "warnLimit": 0,
+      "primaryBot": null,
+      "antilinks": 1,
+      "antistatus": 0,
+      "personajesReservados": [],
+      "intercambios": [],
+      "timeTrade": 0,
+      "scheduledActions": [],
+      "groupOpenStatus": 0,
+      "id": "120363421367237421@newsletter"
     }
   },
   "chat_users": {
@@ -1277,11 +1349,11 @@
       "buyCooldown": 0,
       "stats": {
         "2026-09-07": {
-          "msgs": 109,
-          "cmds": 85
+          "msgs": 114,
+          "cmds": 90
         }
       },
-      "usedTime": "2026-09-07T20:44:11.183Z",
+      "usedTime": "2026-09-07T20:48:02.618Z",
       "warnings": [],
       "chat_id": "120363428996880036@g.us",
       "user_id": "51980730680@s.whatsapp.net"
@@ -1508,7 +1580,7 @@
       "buyCooldown": 0,
       "stats": {
         "2026-09-07": {
-          "msgs": 2,
+          "msgs": 3,
           "cmds": 0
         }
       },
@@ -1541,7 +1613,7 @@
       "buyCooldown": 0,
       "stats": {
         "2026-09-07": {
-          "msgs": 121,
+          "msgs": 123,
           "cmds": 5
         }
       },
@@ -2168,7 +2240,7 @@
       "buyCooldown": 0,
       "stats": {
         "2026-09-07": {
-          "msgs": 191,
+          "msgs": 192,
           "cmds": 12
         }
       },
@@ -2935,6 +3007,39 @@
       "warnings": [],
       "chat_id": "120363430974350908@g.us",
       "user_id": "145256280506551@lid"
+    },
+    "120363421367237421@newsletter:120363421367237421@newsletter": {
+      "coins": 0,
+      "bank": 0,
+      "lastdungeon": 0,
+      "lasthunt": 0,
+      "lastfish": 0,
+      "lastslot": 0,
+      "dailyStreak": 0,
+      "characters": [],
+      "personajesEnVenta": [],
+      "crimeCooldown": 0,
+      "mineCooldown": 0,
+      "ritualCooldown": 0,
+      "workCooldown": 0,
+      "rtCooldown": 0,
+      "slutCooldown": 0,
+      "roboCooldown": 0,
+      "pptCooldown": 0,
+      "lastDaily": 0,
+      "voteCooldown": 0,
+      "rwCooldown": 0,
+      "buyCooldown": 0,
+      "stats": {
+        "2026-09-07": {
+          "msgs": 2,
+          "cmds": 0
+        }
+      },
+      "usedTime": null,
+      "warnings": [],
+      "chat_id": "120363421367237421@newsletter",
+      "user_id": "120363421367237421@newsletter"
     }
   },
   "settings": {
@@ -2945,7 +3050,7 @@
         "#",
         "."
       ],
-      "commandsejecut": 177,
+      "commandsejecut": 182,
       "type": "Sub",
       "link": "https://api.stellarwa.xyz",
       "banner": "https://nube.stellarwa.xyz/rf/Zllhqcb8iUug.jpg",

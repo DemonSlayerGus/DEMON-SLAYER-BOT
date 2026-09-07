@@ -62,17 +62,25 @@ export default {
         return msg.reply(`✿ No se encontraron resultados para *${text}*`)
       }
 
-      // AQUI ESTA EL CAMBIO 👇
+      // Banner
       await sock.sendMessage(chat, {
-        text: `ꕥ ꨩᰰ𑪐𑂺 ˳ ׄ 𝖣𝖤𝖬𝖮N 𝖡𝖮𝖳 ࣭𑁯ᰍ ̊ ܃\n\n𖣣ֶㅤ֯⌗ 🔍 ⬭ *${text}*\n𖣣ֶㅤ֯⌗ 🖼️ ⬭ Buscando imágenes...`
+        text: `ꕥ ꨩᰰ𑪐𑂺 ˳ ׄ 𝖣𝖤𝖬𝖮N 𝖡𝖮𝖳 ࣭𑁯ᰍ ̊ ܃\n\n𖣣ֶㅤ֯⌗ 🔍 ⬭ *${text}*\n𖣣ֶㅤ֯⌗ 🖼️ ⬭ Enviando *10 imágenes* en álbum`
       }, { quoted: msg })
 
       const medias = results.slice(0, 10)
-      const images = medias.map(result => ({
-        image: { url: result.hd || result.url }
-      }))
+      
+      // CREAR ALBUM
+      const album = []
+      for (let i = 0; i < medias.length; i++) {
+        album.push({
+          image: { url: medias[i].hd || medias[i].url },
+          caption: i === 0? `*Imagen:* ${text} 🩸\n\nResultados: 1-${medias.length}` : undefined
+        })
+      }
 
-      await Promise.all(images.map(img => sock.sendMessage(chat, img)))
+      await sock.sendMessage(chat, {
+        album: album
+      }, { quoted: msg })
       
       await msg.react('✅')
 
