@@ -18,8 +18,10 @@ pkg update && pkg upgrade -y
 
 ### 2️⃣ Instalar herramientas básicas
 Bash
+
 ```pkg install -y git nodejs-lts python ffmpeg imagemagick yarn
 ```
+
 ### 3️⃣ Si necesitas Node.js 23 específicamente
 ```Bash
 npm install -g n && n 23
@@ -30,8 +32,10 @@ git clone [https://github.com/DemonSlayerGus/DEMON-SLAYER-BOT.git](https://githu
 ```
 ### 5️⃣ Entrar a la carpeta del bot
 Bash
+
 ```cd DEMON-SLAYER-BOT
 ```
+
 ### 6️⃣ Instalar dependencias
 ```Bash
 npm install
