@@ -18,11 +18,11 @@
     },
     "51980730680@s.whatsapp.net": {
       "name": "GUS",
-      "exp": 19048,
+      "exp": 19943,
       "sugCooldown": 0,
-      "level": 13,
+      "level": 14,
       "Subs": 0,
-      "usedcommands": 382,
+      "usedcommands": 396,
       "pasatiempo": "",
       "description": "",
       "marry": "",
@@ -113,12 +113,12 @@
       "id": "254601785782490@lid"
     },
     "224360904306747@lid": {
-      "name": "",
-      "exp": 0,
+      "name": "CRIS",
+      "exp": 30,
       "sugCooldown": 0,
       "level": 0,
       "Subs": 0,
-      "usedcommands": 0,
+      "usedcommands": 1,
       "pasatiempo": "",
       "description": "",
       "marry": "",
@@ -3301,11 +3301,11 @@
           "cmds": 180
         },
         "2026-09-08": {
-          "msgs": 164,
-          "cmds": 130
+          "msgs": 179,
+          "cmds": 143
         }
       },
-      "usedTime": "2026-09-08T16:36:41.337Z",
+      "usedTime": "2026-09-08T16:45:43.366Z",
       "warnings": [],
       "chat_id": "120363428996880036@g.us",
       "user_id": "51980730680@s.whatsapp.net"
@@ -3548,11 +3548,11 @@
           "cmds": 0
         },
         "2026-09-08": {
-          "msgs": 9,
-          "cmds": 0
+          "msgs": 11,
+          "cmds": 1
         }
       },
-      "usedTime": null,
+      "usedTime": "2026-09-08T16:40:07.865Z",
       "warnings": [],
       "chat_id": "120363419664554065@g.us",
       "user_id": "224360904306747@lid"
@@ -4030,7 +4030,7 @@
           "cmds": 0
         },
         "2026-09-08": {
-          "msgs": 11,
+          "msgs": 12,
           "cmds": 0
         }
       },
@@ -4166,7 +4166,7 @@
           "cmds": 0
         },
         "2026-09-08": {
-          "msgs": 38,
+          "msgs": 41,
           "cmds": 0
         }
       },
@@ -4236,7 +4236,7 @@
           "cmds": 19
         },
         "2026-09-08": {
-          "msgs": 73,
+          "msgs": 80,
           "cmds": 2
         }
       },
@@ -4273,7 +4273,7 @@
           "cmds": 33
         },
         "2026-09-08": {
-          "msgs": 28,
+          "msgs": 36,
           "cmds": 2
         }
       },
@@ -5309,6 +5309,10 @@
         "2026-09-07": {
           "msgs": 249,
           "cmds": 0
+        },
+        "2026-09-08": {
+          "msgs": 1,
+          "cmds": 0
         }
       },
       "usedTime": null,
@@ -5818,7 +5822,7 @@
           "cmds": 0
         },
         "2026-09-08": {
-          "msgs": 5,
+          "msgs": 6,
           "cmds": 0
         }
       },
@@ -6061,7 +6065,7 @@
           "cmds": 0
         },
         "2026-09-08": {
-          "msgs": 10,
+          "msgs": 15,
           "cmds": 0
         }
       },
@@ -6407,7 +6411,7 @@
           "cmds": 20
         },
         "2026-09-08": {
-          "msgs": 5,
+          "msgs": 7,
           "cmds": 1
         }
       },
@@ -6518,7 +6522,7 @@
           "cmds": 4
         },
         "2026-09-08": {
-          "msgs": 28,
+          "msgs": 29,
           "cmds": 0
         }
       },
@@ -8296,6 +8300,39 @@
       "warnings": [],
       "chat_id": "120363419664554065@g.us",
       "user_id": "584242884396@s.whatsapp.net"
+    },
+    "120363409845238176@g.us:51980730680@s.whatsapp.net": {
+      "coins": 0,
+      "bank": 0,
+      "lastdungeon": 0,
+      "lasthunt": 0,
+      "lastfish": 0,
+      "lastslot": 0,
+      "dailyStreak": 0,
+      "characters": [],
+      "personajesEnVenta": [],
+      "crimeCooldown": 0,
+      "mineCooldown": 0,
+      "ritualCooldown": 0,
+      "workCooldown": 0,
+      "rtCooldown": 0,
+      "slutCooldown": 0,
+      "roboCooldown": 0,
+      "pptCooldown": 0,
+      "lastDaily": 0,
+      "voteCooldown": 0,
+      "rwCooldown": 0,
+      "buyCooldown": 0,
+      "stats": {
+        "2026-09-08": {
+          "msgs": 3,
+          "cmds": 1
+        }
+      },
+      "usedTime": "2026-09-08T16:39:39.072Z",
+      "warnings": [],
+      "chat_id": "120363409845238176@g.us",
+      "user_id": "51980730680@s.whatsapp.net"
     }
   },
   "settings": {
@@ -8306,7 +8343,7 @@
         "#",
         "."
       ],
-      "commandsejecut": 509,
+      "commandsejecut": 524,
       "type": "Sub",
       "link": "https://api.stellarwa.xyz",
       "banner": "https://nube.stellarwa.xyz/rf/Zllhqcb8iUug.jpg",
