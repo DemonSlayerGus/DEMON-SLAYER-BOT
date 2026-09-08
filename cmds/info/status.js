@@ -1,56 +1,76 @@
 import db from "#db"
-import fs from 'fs';
 import os from 'os';
 
 function getDefaultHostId() {
   if (process.env.HOSTNAME) {
     return process.env.HOSTNAME.split('-')[0]
   }
-  return 'default_host_id'
+  return 'demon-host'
 }
 
 export default {
-  command: ['status'],
+  command: ['status', 'estate', 'botinfo'],
   category: 'info',
+  desc: 'Estado del bot y servidor',
   run: async ({ msg, sock }) => {
+    try {
+      // FIX: Por si db.getUser() da error
+      let users = {}
+      let chats = {}
+      try { users = await db.getUser() || {} } catch(e){}
+      try { chats = await db.getChat() || {} } catch(e){}
 
-    const users = await db.getUser()
-    const hostId = getDefaultHostId()
-    const chats = await db.getChat()
-    const registeredGroups = chats ? Object.keys(chats).length : 0
-    const botId = sock.user.id.split(':')[0] + "@s.whatsapp.net" || false
-    const botSettings = await db.getSettings(botId)
+      const hostId = getDefaultHostId()
+      const registeredGroups = Object.keys(chats).length
+      const botId = sock.user.id.split(':')[0] + "@s.whatsapp.net"
 
-    const botname = botSettings.namebot || 'Ai Surus'
-    const comandos = botSettings.commandsejecut || '0'
-    const botname2 = botSettings.namebot2 || 'Surus'
-    const userCount = Object.keys(users).length || '0'
+      let botSettings = {}
+      try { botSettings = await db.getSettings(botId) || {} } catch(e){}
 
-    const estadoBot = 
-`> ❑  ˖⁩   ౼ Estatus :: *${botname2}*
+      const botname = botSettings.namebot2 || 'DEMON BOT'
+      const comandos = botSettings.commandsejecut || '0'
+      const userCount = Object.keys(users).length
 
-ׅ  ׄ  ✿   ׅ り Users Registrados :: *${userCount.toLocaleString()}*
-ׅ  ׄ  ✿   ׅ り Grupos Registrados :: *${registeredGroups.toLocaleString()}*
-ׅ  ׄ  ✿   ׅ り 𝖢𝗆𝖽 𝖤𝗃𝖾𝖼 :: *${comandos.toLocaleString()}*`
+      const uptime = process.uptime()
+      const horas = Math.floor(uptime / 3600)
+      const mins = Math.floor((uptime % 3600) / 60)
 
-    const sistema = os.type()
-    const cpu = os.cpus().length
-    const ramTotal = (os.totalmem() / 1024 ** 3).toFixed(2)
-    const ramUsada = ((os.totalmem() - os.freemem()) / 1024 ** 3).toFixed(2)
-    const arquitectura = os.arch()
+      const estadoBot =
+`╭─「 🩸 *ESTATUS DEMON* 」
+│
+│ 👹 *Bot:* ${botname}
+│ 👤 *Usuarios:* ${userCount.toLocaleString()}
+│ 👥 *Grupos:* ${registeredGroups.toLocaleString()}
+│ ⚔️ *Cmds Usados:* ${comandos.toLocaleString()}
+│ ⏱️ *Activo:* ${horas}h ${mins}m
+│
+╰───────────────╯`
 
-    const estadoServidor = 
-`𖹭᳔ㅤㅤㅤׄㅤㅤꕤㅤㅤׅㅤㅤゕㅤㅤׄㅤㅤㅤ𑄾𑄾
+      const sistema = os.type()
+      const cpu = os.cpus().length
+      const ramTotal = (os.totalmem() / 1024 ** 3).toFixed(2)
+      const ramUsada = ((os.totalmem() - os.freem()) / 1024 ** 3).toFixed(2)
+      const arquitectura = os.arch()
+      const usoRam = ramTotal > 0? ((ramUsada / ramTotal) * 100).toFixed(1) : '0.0'
 
-ׅ  ׄ  ✤   ׅ り Sistema :: *${sistema}*
-ׅ  ׄ  ✤   ׅ り Cpu :: *${cpu} cores*
-ׅ  ׄ  ✤   ׅ り Ram :: *${ramTotal} GB*
-ׅ  ׄ  ✤   ׅ り Ram Usado :: *${ramUsada} GB*
-ׅ  ׄ  ✤   ׅ り Arquitectura :: *${arquitectura}*
-ׅ  ׄ  ✤   ׅ り Host ID :: *${hostId}*`
+      const estadoServidor =
+`╭─「 ⚡ *SERVIDOR* 」
+│
+│ 💻 *Sistema:* ${sistema}
+│ 🔧 *CPU:* ${cpu} Cores
+│ 🧠 *RAM:* ${ramUsada}GB / ${ramTotal}GB [${usoRam}%]
+│ 🏗️ *Arq:* ${arquitectura}
+│ 🆔 *Host:* ${hostId}
+│
+╰───────────────╯`
 
-    const message = `${estadoBot}\n\n${estadoServidor}`
+      const message = `${estadoBot}\n\n${estadoServidor}`
+      await msg.reply(message)
+      await msg.react("🩸")
 
-        await msg.reply(message)
+    } catch (e) {
+      console.log(e)
+      await msg.reply(`《✧》 Error: ${e.message}`)
+    }
   }
 };
