@@ -6,12 +6,10 @@ export default {
   command: ['toimg', 'toimage'],
   category: 'utils',
   run: async ({ msg, sock }) => {
-    if (!msg.quoted) {
-      return sock.sendMessage(msg.chat, { text: `✿ Debes citar un sticker para convertir a imagen.` }, { quoted: msg })
-    }
+    if (!msg.quoted) return sock.reply(msg.chat, `✿ Debes citar un sticker para convertir a imagen.`, msg)
     
-    if (!msg.quoted.mimetype || !msg.quoted.mimetype.includes('webp')) {
-      return sock.sendMessage(msg.chat, { text: `✿ Eso no es un sticker bro` }, { quoted: msg })
+    if (!msg.quoted.mimetype.includes('webp')) {
+      return sock.reply(msg.chat, `✿ Eso no es un sticker bro`, msg)
     }
 
     await msg.react('🕒')
@@ -20,7 +18,7 @@ export default {
       let buffer = await msg.quoted.download()
       if (!buffer) {
         await msg.react('✖️')
-        return sock.sendMessage(msg.chat, { text: `✿ No se pudo descargar el sticker.` }, { quoted: msg })
+        return sock.reply(msg.chat, `✿ No se pudo descargar el sticker.`, msg)
       }
 
       // Convertir webp a png
@@ -45,7 +43,7 @@ export default {
     } catch (e) {
       console.log(e)
       await msg.react('✖️')
-      sock.sendMessage(msg.chat, { text: `✿ Error al convertir el sticker` }, { quoted: msg })
+      sock.reply(msg.chat, `✿ Error al convertir el sticker`, msg)
     }
   }
 }
