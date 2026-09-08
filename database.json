@@ -18,11 +18,11 @@
     },
     "51980730680@s.whatsapp.net": {
       "name": "GUS",
-      "exp": 18716,
+      "exp": 19048,
       "sugCooldown": 0,
       "level": 13,
       "Subs": 0,
-      "usedcommands": 374,
+      "usedcommands": 382,
       "pasatiempo": "",
       "description": "",
       "marry": "",
@@ -402,11 +402,11 @@
     },
     "5212225237061@s.whatsapp.net": {
       "name": "👹👹",
-      "exp": 715,
+      "exp": 746,
       "sugCooldown": 0,
       "level": 2,
       "Subs": 0,
-      "usedcommands": 15,
+      "usedcommands": 16,
       "pasatiempo": "",
       "description": "",
       "marry": "5216623572734@s.whatsapp.net",
@@ -3301,11 +3301,11 @@
           "cmds": 180
         },
         "2026-09-08": {
-          "msgs": 155,
-          "cmds": 122
+          "msgs": 164,
+          "cmds": 130
         }
       },
-      "usedTime": "2026-09-08T16:29:47.068Z",
+      "usedTime": "2026-09-08T16:36:41.337Z",
       "warnings": [],
       "chat_id": "120363428996880036@g.us",
       "user_id": "51980730680@s.whatsapp.net"
@@ -3548,7 +3548,7 @@
           "cmds": 0
         },
         "2026-09-08": {
-          "msgs": 5,
+          "msgs": 9,
           "cmds": 0
         }
       },
@@ -4236,11 +4236,11 @@
           "cmds": 19
         },
         "2026-09-08": {
-          "msgs": 69,
-          "cmds": 1
+          "msgs": 73,
+          "cmds": 2
         }
       },
-      "usedTime": "2026-09-08T05:00:06.530Z",
+      "usedTime": "2026-09-08T16:36:35.787Z",
       "warnings": [],
       "chat_id": "120363430974350908@g.us",
       "user_id": "5212225237061@s.whatsapp.net"
@@ -6061,7 +6061,7 @@
           "cmds": 0
         },
         "2026-09-08": {
-          "msgs": 8,
+          "msgs": 10,
           "cmds": 0
         }
       },
@@ -6518,7 +6518,7 @@
           "cmds": 4
         },
         "2026-09-08": {
-          "msgs": 26,
+          "msgs": 28,
           "cmds": 0
         }
       },
@@ -7329,7 +7329,7 @@
           "cmds": 2
         },
         "2026-09-08": {
-          "msgs": 83,
+          "msgs": 86,
           "cmds": 0
         }
       },
@@ -8306,7 +8306,7 @@
         "#",
         "."
       ],
-      "commandsejecut": 500,
+      "commandsejecut": 509,
       "type": "Sub",
       "link": "https://api.stellarwa.xyz",
       "banner": "https://nube.stellarwa.xyz/rf/Zllhqcb8iUug.jpg",
