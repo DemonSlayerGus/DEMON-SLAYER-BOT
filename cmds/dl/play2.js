@@ -1,57 +1,59 @@
+import yts from 'yt-search'
 import fetch from 'node-fetch'
+import { getBuffer } from '#serialize'
 
 export default {
-  command: ['play2'],
-  category: 'multimedia',
-  help: ['play2 <texto|link>'],
+  command: ['play2', 'mp4', 'ytmp4'],
+  category: 'downloader',
   run: async ({ msg, sock, args }) => {
-    const text = args.join(' ')
-    if (!text) return msg.reply(`「✦」Escribe el nombre o link del video.\n> ✐ Ejemplo » *.play2 lovely*`)
-
-    await msg.react('🕒')
-
     try {
-      const apiUrl = `https://yosoyyo-api-ofc.onrender.com/api/youtube?q=${encodeURIComponent(text)}&apiKey=${global.api}`
-      const response = await fetch(apiUrl)
-      const json = await response.json()
+      if (!args[0]) return msg.reply('《✧》 Manda el nombre o link del video')
 
-      if (!json.result || json.result.length === 0) {
-        return msg.reply('「✦」No se encontraron resultados.')
-      }
+      await msg.react("🕐")
+      const text = args.join(' ')
+      const videoMatch = text.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/|live\/|v\/))([a-zA-Z0-9_-]{11})/)
+      const query = videoMatch? 'https://youtu.be/' + videoMatch[1] : text
 
-      const video = json.result[0]
-      const { title, videoUrl, thumbnailUrl, channelName, duration, download } = video
-      const mp4Url = download?.mp4
+      const search = await yts(query)
+      const videoInfo = videoMatch? search.videos.find(v => v.videoId === videoMatch[1]) || search.all[0] : search.all[0]
+      if (!videoInfo) return msg.reply('《✧》 No encontré ese video.')
 
-      const caption = `🎞️ *Reproduciendo Video*
-━━━━━━━━━━━━━━
-📌 *Título:* ${title}
-👤 *Canal:* ${channelName}
-⏱️ *Duración:* ${duration}
-🔗 *Link:* ${videoUrl}
-━━━━━━━━━━━━━━`
+      const { url, title, views, author, image, timestamp } = videoInfo
+      const thumb = await getBuffer(image)
+
+      const caption = `╭─「 *DESCARGA VIDEO* 」
+│ *Título:* ${title}
+│ *Canal:* ${author?.name || 'Desconocido'}
+│ *Duración:* ${timestamp}
+│ *Vistas:* ${views.toLocaleString()}
+│ *Calidad:* 480p
+╰─「 *Descargando...* 」`
+
+      await sock.sendMessage(msg.chat, { image: thumb, caption }, { quoted: msg })
+
+      const apiKey = "yosoyyo_sk_dk72d73o"
+      const endpoint = `https://api-yosoyyo-api-ofc.onrender.com/api/youtube/v2?url=${encodeURIComponent(url)}&format=mp4&apiKey=${apiKey}`
+      const res = await fetch(endpoint).then(r => r.json())
+
+      if (!res?.status ||!res.result?.results?.length) return msg.reply('《✧》 Error al obtener el video')
+
+      // Solo agarrar 480p
+      const video480 = res.result.results.find(v => v.type === "video" && v.quality === "480p") || res.result.results.find(v => v.type === "video")
+
+      if (!video480) return msg.reply('《✧》 No hay video disponible')
 
       await sock.sendMessage(msg.chat, {
-        image: { url: thumbnailUrl || 'https://i.ytimg.com/vi/error/hqdefault.jpg' },
-        caption
+        video: { url: video480.download },
+        mimetype: 'video/mp4',
+        fileName: `${title} [480p].mp4`,
+        caption: `*${title}*\n> 480p | Descarga rápida`
       }, { quoted: msg })
 
-      if (mp4Url) {
-        await sock.sendMessage(msg.chat, {
-          video: { url: mp4Url },
-          mimetype: 'video/mp4',
-          fileName: `${title}.mp4`,
-          caption: `🎬 ${title}`
-        }, { quoted: msg })
-        await msg.react('✅')
-      } else {
-        throw new Error('No se pudo obtener el enlace de descarga MP4.')
-      }
-
+      await msg.react("✅")
     } catch (e) {
-      console.error(e)
-      await msg.react('❌')
-      msg.reply(`「✦」Ocurrió un error inesperado.\n\n> 🧩 Error:\n\`\`\`\n${e.message || e}\n\`\`\``)
+      console.log(e)
+      await msg.react("❌")
+      msg.reply('《✧》 Error al procesar')
     }
   }
 }
