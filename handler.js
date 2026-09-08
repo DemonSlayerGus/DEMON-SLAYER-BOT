@@ -195,7 +195,7 @@ if (!user.stats[today]) user.stats[today] = { msgs: 0, cmds: 0 }
 if (!cmdData) {
   if (settings.prefijo === 1) return
   await sock.readMessages([msg.key])
-  return msg.reply(`「✦」*Oops*
+  return msg.reply(`「✦」*un..*
 El comando *${command}* no existe.
 
 「✦」Usa *${usedPrefix}menu* o *${usedPrefix}help* para ver todos mis comandos.`)
