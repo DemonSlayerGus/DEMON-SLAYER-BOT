@@ -18,11 +18,11 @@
     },
     "51980730680@s.whatsapp.net": {
       "name": "GUS",
-      "exp": 22334,
+      "exp": 22697,
       "sugCooldown": 0,
-      "level": 14,
+      "level": 15,
       "Subs": 0,
-      "usedcommands": 447,
+      "usedcommands": 454,
       "pasatiempo": "",
       "description": "",
       "marry": "",
@@ -81,12 +81,12 @@
       "id": "120363400911374213@newsletter"
     },
     "5217861288348@s.whatsapp.net": {
-      "name": "",
-      "exp": 0,
+      "name": "isabela",
+      "exp": 147,
       "sugCooldown": 0,
-      "level": 0,
+      "level": 1,
       "Subs": 0,
-      "usedcommands": 0,
+      "usedcommands": 2,
       "pasatiempo": "",
       "description": "",
       "marry": "",
@@ -98,11 +98,11 @@
     },
     "254601785782490@lid": {
       "name": "Salem",
-      "exp": 575,
+      "exp": 655,
       "sugCooldown": 0,
       "level": 2,
       "Subs": 0,
-      "usedcommands": 10,
+      "usedcommands": 11,
       "pasatiempo": "",
       "description": "",
       "marry": "",
@@ -402,11 +402,11 @@
     },
     "5212225237061@s.whatsapp.net": {
       "name": "👹👹",
-      "exp": 857,
+      "exp": 954,
       "sugCooldown": 0,
-      "level": 2,
+      "level": 3,
       "Subs": 0,
-      "usedcommands": 19,
+      "usedcommands": 21,
       "pasatiempo": "",
       "description": "",
       "marry": "5216623572734@s.whatsapp.net",
@@ -498,11 +498,11 @@
     },
     "5217297826686@s.whatsapp.net": {
       "name": "    𓍯 𝓨𝓾𝓷𝓪 𓍯",
-      "exp": 648,
+      "exp": 759,
       "sugCooldown": 0,
       "level": 2,
       "Subs": 0,
-      "usedcommands": 13,
+      "usedcommands": 16,
       "pasatiempo": "",
       "description": "",
       "marry": "",
@@ -3103,6 +3103,22 @@
       "metadatos": null,
       "metadatos2": null,
       "id": "5216862281657@s.whatsapp.net"
+    },
+    "5218441186450@s.whatsapp.net": {
+      "name": "",
+      "exp": 0,
+      "sugCooldown": 0,
+      "level": 0,
+      "Subs": 0,
+      "usedcommands": 0,
+      "pasatiempo": "",
+      "description": "",
+      "marry": "",
+      "genre": "",
+      "birth": "",
+      "metadatos": null,
+      "metadatos2": null,
+      "id": "5218441186450@s.whatsapp.net"
     }
   },
   "chats": {
@@ -3537,6 +3553,30 @@
       "scheduledActions": [],
       "groupOpenStatus": 0,
       "id": "120363399729727124@newsletter"
+    },
+    "120363427853695963@g.us": {
+      "bannedGrupo": 0,
+      "welcomeMessage": "",
+      "byeMessage": "",
+      "welcome": 0,
+      "goodbye": 0,
+      "antinsfw": 0,
+      "nsfw": 0,
+      "alerts": 0,
+      "gacha": 1,
+      "rpg": 1,
+      "adminonly": 0,
+      "expulsar": 0,
+      "warnLimit": 0,
+      "primaryBot": null,
+      "antilinks": 1,
+      "antistatus": 0,
+      "personajesReservados": [],
+      "intercambios": [],
+      "timeTrade": 0,
+      "scheduledActions": [],
+      "groupOpenStatus": 0,
+      "id": "120363427853695963@g.us"
     }
   },
   "chat_users": {
@@ -3605,11 +3645,11 @@
           "cmds": 180
         },
         "2026-09-08": {
-          "msgs": 241,
-          "cmds": 190
+          "msgs": 248,
+          "cmds": 197
         }
       },
-      "usedTime": "2026-09-08T19:37:37.883Z",
+      "usedTime": "2026-09-08T19:47:26.547Z",
       "warnings": [],
       "chat_id": "120363428996880036@g.us",
       "user_id": "51980730680@s.whatsapp.net"
@@ -3778,11 +3818,11 @@
           "cmds": 0
         },
         "2026-09-08": {
-          "msgs": 46,
-          "cmds": 0
+          "msgs": 55,
+          "cmds": 2
         }
       },
-      "usedTime": null,
+      "usedTime": "2026-09-08T19:42:51.834Z",
       "warnings": [],
       "chat_id": "120363430974350908@g.us",
       "user_id": "5217861288348@s.whatsapp.net"
@@ -3815,11 +3855,11 @@
           "cmds": 9
         },
         "2026-09-08": {
-          "msgs": 40,
-          "cmds": 1
+          "msgs": 47,
+          "cmds": 2
         }
       },
-      "usedTime": "2026-09-08T13:42:42.210Z",
+      "usedTime": "2026-09-08T19:41:59.460Z",
       "warnings": [],
       "chat_id": "120363430974350908@g.us",
       "user_id": "254601785782490@lid"
@@ -3889,7 +3929,7 @@
           "cmds": 9
         },
         "2026-09-08": {
-          "msgs": 104,
+          "msgs": 108,
           "cmds": 4
         }
       },
@@ -4544,7 +4584,7 @@
           "cmds": 19
         },
         "2026-09-08": {
-          "msgs": 118,
+          "msgs": 119,
           "cmds": 5
         }
       },
@@ -4795,11 +4835,11 @@
           "cmds": 1
         },
         "2026-09-08": {
-          "msgs": 281,
-          "cmds": 12
+          "msgs": 285,
+          "cmds": 13
         }
       },
-      "usedTime": "2026-09-08T19:36:13.553Z",
+      "usedTime": "2026-09-08T19:38:14.126Z",
       "warnings": [],
       "chat_id": "120363430974350908@g.us",
       "user_id": "5217297826686@s.whatsapp.net"
@@ -6340,7 +6380,7 @@
           "cmds": 0
         },
         "2026-09-08": {
-          "msgs": 5,
+          "msgs": 7,
           "cmds": 0
         }
       },
@@ -6760,7 +6800,7 @@
           "cmds": 7
         },
         "2026-09-08": {
-          "msgs": 27,
+          "msgs": 32,
           "cmds": 6
         }
       },
@@ -6797,7 +6837,7 @@
           "cmds": 4
         },
         "2026-09-08": {
-          "msgs": 32,
+          "msgs": 35,
           "cmds": 1
         }
       },
@@ -6834,7 +6874,7 @@
           "cmds": 4
         },
         "2026-09-08": {
-          "msgs": 32,
+          "msgs": 33,
           "cmds": 0
         }
       },
@@ -6871,7 +6911,7 @@
           "cmds": 4
         },
         "2026-09-08": {
-          "msgs": 6,
+          "msgs": 12,
           "cmds": 0
         }
       },
@@ -7048,7 +7088,7 @@
           "cmds": 0
         },
         "2026-09-08": {
-          "msgs": 29,
+          "msgs": 36,
           "cmds": 0
         }
       },
@@ -7645,7 +7685,7 @@
           "cmds": 2
         },
         "2026-09-08": {
-          "msgs": 100,
+          "msgs": 102,
           "cmds": 0
         }
       },
@@ -7756,7 +7796,7 @@
           "cmds": 2
         },
         "2026-09-08": {
-          "msgs": 75,
+          "msgs": 77,
           "cmds": 0
         }
       },
@@ -8163,7 +8203,7 @@
           "cmds": 2
         },
         "2026-09-08": {
-          "msgs": 98,
+          "msgs": 99,
           "cmds": 0
         }
       },
@@ -8901,14 +8941,146 @@
       "buyCooldown": 0,
       "stats": {
         "2026-09-08": {
-          "msgs": 2,
-          "cmds": 0
+          "msgs": 33,
+          "cmds": 4
         }
       },
       "usedTime": null,
       "warnings": [],
       "chat_id": "120363429583071301@g.us",
       "user_id": "5214778121185@s.whatsapp.net"
+    },
+    "120363427853695963@g.us:5217297826686@s.whatsapp.net": {
+      "coins": 0,
+      "bank": 0,
+      "lastdungeon": 0,
+      "lasthunt": 0,
+      "lastfish": 0,
+      "lastslot": 0,
+      "dailyStreak": 0,
+      "characters": [],
+      "personajesEnVenta": [],
+      "crimeCooldown": 0,
+      "mineCooldown": 0,
+      "ritualCooldown": 0,
+      "workCooldown": 0,
+      "rtCooldown": 0,
+      "slutCooldown": 0,
+      "roboCooldown": 0,
+      "pptCooldown": 0,
+      "lastDaily": 0,
+      "voteCooldown": 0,
+      "rwCooldown": 0,
+      "buyCooldown": 0,
+      "stats": {
+        "2026-09-08": {
+          "msgs": 33,
+          "cmds": 4
+        }
+      },
+      "usedTime": "2026-09-08T19:44:20.725Z",
+      "warnings": [],
+      "chat_id": "120363427853695963@g.us",
+      "user_id": "5217297826686@s.whatsapp.net"
+    },
+    "120363427853695963@g.us:5212225237061@s.whatsapp.net": {
+      "coins": 0,
+      "bank": 0,
+      "lastdungeon": 0,
+      "lasthunt": 0,
+      "lastfish": 0,
+      "lastslot": 0,
+      "dailyStreak": 0,
+      "characters": [],
+      "personajesEnVenta": [],
+      "crimeCooldown": 0,
+      "mineCooldown": 0,
+      "ritualCooldown": 0,
+      "workCooldown": 0,
+      "rtCooldown": 0,
+      "slutCooldown": 0,
+      "roboCooldown": 0,
+      "pptCooldown": 0,
+      "lastDaily": 0,
+      "voteCooldown": 0,
+      "rwCooldown": 0,
+      "buyCooldown": 0,
+      "stats": {
+        "2026-09-08": {
+          "msgs": 33,
+          "cmds": 4
+        }
+      },
+      "usedTime": "2026-09-08T19:40:21.892Z",
+      "warnings": [],
+      "chat_id": "120363427853695963@g.us",
+      "user_id": "5212225237061@s.whatsapp.net"
+    },
+    "120363427853695963@g.us:5216623572734@s.whatsapp.net": {
+      "coins": 0,
+      "bank": 0,
+      "lastdungeon": 0,
+      "lasthunt": 0,
+      "lastfish": 0,
+      "lastslot": 0,
+      "dailyStreak": 0,
+      "characters": [],
+      "personajesEnVenta": [],
+      "crimeCooldown": 0,
+      "mineCooldown": 0,
+      "ritualCooldown": 0,
+      "workCooldown": 0,
+      "rtCooldown": 0,
+      "slutCooldown": 0,
+      "roboCooldown": 0,
+      "pptCooldown": 0,
+      "lastDaily": 0,
+      "voteCooldown": 0,
+      "rwCooldown": 0,
+      "buyCooldown": 0,
+      "stats": {
+        "2026-09-08": {
+          "msgs": 33,
+          "cmds": 4
+        }
+      },
+      "usedTime": null,
+      "warnings": [],
+      "chat_id": "120363427853695963@g.us",
+      "user_id": "5216623572734@s.whatsapp.net"
+    },
+    "120363419664554065@g.us:5218441186450@s.whatsapp.net": {
+      "coins": 0,
+      "bank": 0,
+      "lastdungeon": 0,
+      "lasthunt": 0,
+      "lastfish": 0,
+      "lastslot": 0,
+      "dailyStreak": 0,
+      "characters": [],
+      "personajesEnVenta": [],
+      "crimeCooldown": 0,
+      "mineCooldown": 0,
+      "ritualCooldown": 0,
+      "workCooldown": 0,
+      "rtCooldown": 0,
+      "slutCooldown": 0,
+      "roboCooldown": 0,
+      "pptCooldown": 0,
+      "lastDaily": 0,
+      "voteCooldown": 0,
+      "rwCooldown": 0,
+      "buyCooldown": 0,
+      "stats": {
+        "2026-09-08": {
+          "msgs": 33,
+          "cmds": 4
+        }
+      },
+      "usedTime": null,
+      "warnings": [],
+      "chat_id": "120363419664554065@g.us",
+      "user_id": "5218441186450@s.whatsapp.net"
     }
   },
   "settings": {
@@ -8919,7 +9091,7 @@
         "#",
         "."
       ],
-      "commandsejecut": 609,
+      "commandsejecut": 624,
       "type": "Sub",
       "link": "https://api.stellarwa.xyz",
       "banner": "https://nube.stellarwa.xyz/rf/Zllhqcb8iUug.jpg",
