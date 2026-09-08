@@ -18,11 +18,11 @@
     },
     "51980730680@s.whatsapp.net": {
       "name": "GUS",
-      "exp": 21145,
+      "exp": 21200,
       "sugCooldown": 0,
       "level": 14,
       "Subs": 0,
-      "usedcommands": 423,
+      "usedcommands": 424,
       "pasatiempo": "",
       "description": "",
       "marry": "",
@@ -2799,6 +2799,70 @@
       "metadatos": null,
       "metadatos2": null,
       "id": "584242884396@s.whatsapp.net"
+    },
+    "5217447390649@s.whatsapp.net": {
+      "name": "",
+      "exp": 0,
+      "sugCooldown": 0,
+      "level": 0,
+      "Subs": 0,
+      "usedcommands": 0,
+      "pasatiempo": "",
+      "description": "",
+      "marry": "",
+      "genre": "",
+      "birth": "",
+      "metadatos": null,
+      "metadatos2": null,
+      "id": "5217447390649@s.whatsapp.net"
+    },
+    "5214444159705@s.whatsapp.net": {
+      "name": "",
+      "exp": 0,
+      "sugCooldown": 0,
+      "level": 0,
+      "Subs": 0,
+      "usedcommands": 0,
+      "pasatiempo": "",
+      "description": "",
+      "marry": "",
+      "genre": "",
+      "birth": "",
+      "metadatos": null,
+      "metadatos2": null,
+      "id": "5214444159705@s.whatsapp.net"
+    },
+    "5218333902778@s.whatsapp.net": {
+      "name": "",
+      "exp": 0,
+      "sugCooldown": 0,
+      "level": 0,
+      "Subs": 0,
+      "usedcommands": 0,
+      "pasatiempo": "",
+      "description": "",
+      "marry": "",
+      "genre": "",
+      "birth": "",
+      "metadatos": null,
+      "metadatos2": null,
+      "id": "5218333902778@s.whatsapp.net"
+    },
+    "59171303101@s.whatsapp.net": {
+      "name": "",
+      "exp": 0,
+      "sugCooldown": 0,
+      "level": 0,
+      "Subs": 0,
+      "usedcommands": 0,
+      "pasatiempo": "",
+      "description": "",
+      "marry": "",
+      "genre": "",
+      "birth": "",
+      "metadatos": null,
+      "metadatos2": null,
+      "id": "59171303101@s.whatsapp.net"
     }
   },
   "chats": {
@@ -3301,11 +3365,11 @@
           "cmds": 180
         },
         "2026-09-08": {
-          "msgs": 210,
-          "cmds": 166
+          "msgs": 211,
+          "cmds": 167
         }
       },
-      "usedTime": "2026-09-08T17:07:52.385Z",
+      "usedTime": "2026-09-08T17:08:16.004Z",
       "warnings": [],
       "chat_id": "120363428996880036@g.us",
       "user_id": "51980730680@s.whatsapp.net"
@@ -6065,7 +6129,7 @@
           "cmds": 0
         },
         "2026-09-08": {
-          "msgs": 16,
+          "msgs": 19,
           "cmds": 0
         }
       },
@@ -8343,7 +8407,7 @@
         "#",
         "."
       ],
-      "commandsejecut": 551,
+      "commandsejecut": 552,
       "type": "Sub",
       "link": "https://api.stellarwa.xyz",
       "banner": "https://nube.stellarwa.xyz/rf/Zllhqcb8iUug.jpg",
