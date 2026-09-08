@@ -18,11 +18,11 @@
     },
     "51980730680@s.whatsapp.net": {
       "name": "GUS",
-      "exp": 8848,
+      "exp": 8873,
       "sugCooldown": 0,
       "level": 9,
       "Subs": 0,
-      "usedcommands": 179,
+      "usedcommands": 180,
       "pasatiempo": "",
       "description": "",
       "marry": "",
@@ -3092,7 +3092,7 @@
       "buyCooldown": 0,
       "stats": {
         "2026-09-07": {
-          "msgs": 363,
+          "msgs": 364,
           "cmds": 1
         }
       },
@@ -3521,7 +3521,7 @@
       "buyCooldown": 0,
       "stats": {
         "2026-09-07": {
-          "msgs": 141,
+          "msgs": 142,
           "cmds": 13
         }
       },
@@ -3719,7 +3719,7 @@
       "buyCooldown": 0,
       "stats": {
         "2026-09-07": {
-          "msgs": 564,
+          "msgs": 565,
           "cmds": 0
         }
       },
@@ -5237,7 +5237,7 @@
       "buyCooldown": 0,
       "stats": {
         "2026-09-07": {
-          "msgs": 272,
+          "msgs": 273,
           "cmds": 0
         }
       },
@@ -5567,11 +5567,11 @@
       "buyCooldown": 0,
       "stats": {
         "2026-09-07": {
-          "msgs": 47,
-          "cmds": 8
+          "msgs": 48,
+          "cmds": 9
         }
       },
-      "usedTime": "2026-09-08T01:47:43.597Z",
+      "usedTime": "2026-09-08T01:48:01.710Z",
       "warnings": [],
       "chat_id": "120363430974350908@g.us",
       "user_id": "51980730680@s.whatsapp.net"
@@ -5600,7 +5600,7 @@
       "buyCooldown": 0,
       "stats": {
         "2026-09-07": {
-          "msgs": 40,
+          "msgs": 41,
           "cmds": 5
         }
       },
@@ -5930,7 +5930,7 @@
       "buyCooldown": 0,
       "stats": {
         "2026-09-07": {
-          "msgs": 1,
+          "msgs": 2,
           "cmds": 0
         }
       },
@@ -5948,7 +5948,7 @@
         "#",
         "."
       ],
-      "commandsejecut": 242,
+      "commandsejecut": 243,
       "type": "Sub",
       "link": "https://api.stellarwa.xyz",
       "banner": "https://nube.stellarwa.xyz/rf/Zllhqcb8iUug.jpg",
