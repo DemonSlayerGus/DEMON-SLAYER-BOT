@@ -18,11 +18,11 @@
     },
     "51980730680@s.whatsapp.net": {
       "name": "GUS",
-      "exp": 18388,
+      "exp": 18716,
       "sugCooldown": 0,
       "level": 13,
       "Subs": 0,
-      "usedcommands": 369,
+      "usedcommands": 374,
       "pasatiempo": "",
       "description": "",
       "marry": "",
@@ -3301,11 +3301,11 @@
           "cmds": 180
         },
         "2026-09-08": {
-          "msgs": 150,
-          "cmds": 117
+          "msgs": 155,
+          "cmds": 122
         }
       },
-      "usedTime": "2026-09-08T16:27:15.602Z",
+      "usedTime": "2026-09-08T16:29:47.068Z",
       "warnings": [],
       "chat_id": "120363428996880036@g.us",
       "user_id": "51980730680@s.whatsapp.net"
@@ -7329,7 +7329,7 @@
           "cmds": 2
         },
         "2026-09-08": {
-          "msgs": 82,
+          "msgs": 83,
           "cmds": 0
         }
       },
@@ -8306,7 +8306,7 @@
         "#",
         "."
       ],
-      "commandsejecut": 495,
+      "commandsejecut": 500,
       "type": "Sub",
       "link": "https://api.stellarwa.xyz",
       "banner": "https://nube.stellarwa.xyz/rf/Zllhqcb8iUug.jpg",
