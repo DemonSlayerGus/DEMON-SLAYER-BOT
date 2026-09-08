@@ -13,11 +13,19 @@ global.msgglobal = '✿⸝꙳.˖ Ocurrió un problema, contacte al creador'
 global.dev = `🚀Descarga Completa`
 
 global.mess = {
-  socket: '(∩´͈ ᴖ `͈∩ ྀི) Este comando solo puede ser ejecutado por un Socket.',
-  admin: '٩ʕ◕౪◕ʔو Este comando solo puede ser ejecutado por los Administradores del Grupo.',
-  botAdmin: '(𓂂꜆◕⩊◕꜀𓂂) Este comando solo puede ser ejecutado si el Socket es Administrador del Grupo.',
-  nsfw: '(•ૢ⚈͒⌄⚈͒•ૢ) Los comandos de *NSFW* están desactivados en este grupo.',
-  comandooff: 'ღゝ◡╹ )ノ Estos comandos estan desactivados en este grupo.'
+  socket: '「✦」Este comando solo lo puede usar el *Socket Principal* del bot.',
+  admin: '「✦」Solo los *Admins* del grupo pueden usar este comando.',
+  botAdmin: '「✦」Dame *Admin* para poder ejecutar este comando.',
+  nsfw: '「✦」Los comandos *NSFW* están desactivados en este grupo.',
+  comandooff: '「✦」Los comandos están *desactivados* en este grupo.',
+  private: '「✦」Este comando solo funciona en *privado*.',
+  group: '「✦」Este comando solo funciona en *grupos*.',
+  owner: '「✦」Este comando solo lo puede usar mi *Creador*.',
+  premium: '「✦」Necesitas ser *Premium* para usar este comando.',
+  limit: '「✦」Te quedaste sin *límite*. Espera 12h o compra más.',
+  error: '「✦」Ocurrió un error. Intenta de nuevo más tarde.',
+  wait: '「✦」Procesando... espera un momento',
+  success: '「✦」Listo, comando ejecutado correctamente.'
 }
 
 global.my = {

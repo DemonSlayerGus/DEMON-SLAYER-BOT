@@ -2,13 +2,12 @@ import db from "#db"
 
 export default {
   command: ['balance', 'bal'],
-  category: 'rpg',
-    run: async ({ msg, sock, args, command, text, usedPrefix: prefix }) => {
-    const chatId = msg.chat
+  category: 'economy',
+  run: async ({ msg, sock, args, command, text, usedPrefix: prefix }) => {
     const chatData = await db.getChat(msg.chat)
     const botId = sock.user.id.split(':')[0] + "@s.whatsapp.net"
     const botSettings = await db.getSettings(botId)
-    const monedas = botSettings.currency
+    const monedas = botSettings.currency || 'moras'
 
     if (chatData.adminonly ||!chatData.rpg)
       return sock.sendMessage(msg.chat, { text: mess.comandooff }, { quoted: msg })
@@ -21,16 +20,28 @@ export default {
     if (!user)
       return sock.sendMessage(msg.chat, { text: `「✿」 El usuario mencionado no está registrado en el bot.` }, { quoted: msg })
 
-    const total = (user.coins || 0) + (user.bank || 0)
+    // ARREGLO: Probamos varios nombres comunes
+    const wallet = user.money || user.coins || user.wallet || user.exp || 0
+    const bank = user.bank || user.banco || user.diamonds || 0
+    const total = wallet + bank
 
-    const bal = `*ꕥ Balance de ›* ${user2.name}
+    const bal = `╭─❍「 💰 *BALANCE* 」❍
+│
+│ 👤 *Usuario:* ${user2.name}
+│
+│ 💵 *Billetera:* ¥${wallet.toLocaleString()}
+│ 🏦 *Banco:* ¥${bank.toLocaleString()}
+│
+│ 📊 *Total:* ¥${total.toLocaleString()}
+│
+╰────────────────❍
 
-	➠ *${monedas}* : *¥${user.coins?.toLocaleString() || 0}*
-	➠ *Banco* : *¥${user.bank?.toLocaleString() || 0}*
-	➠ *Total* : *¥${total.toLocaleString()}*
+> 💡 Protege tus ${monedas} con *${prefix}dep*
+> 📥 Retira con *${prefix}with*`
 
-> Para proteger tus *${monedas}*, depósitalas en el banco usando *${prefix}dep*`
-
-    await sock.sendMessage(msg.chat, { text: bal }, { quoted: msg })
+    await sock.sendMessage(msg.chat, {
+      text: bal,
+      mentions: [who]
+    }, { quoted: msg })
   }
 };
