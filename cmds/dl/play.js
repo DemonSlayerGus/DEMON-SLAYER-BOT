@@ -15,13 +15,6 @@ function formatDuration(sec) {
   return `${m}:${s.toString().padStart(2, '0')}`
 }
 
-function formatViews(n) {
-  if (!n) return 'N/A'
-  if (n >= 1000000) return (n/1000000).toFixed(1)+'M'
-  if (n >= 1000) return (n/1000).toFixed(1)+'K'
-  return n
-}
-
 async function getYouTubeInfo(query) {
   const busqueda = await yts(query)
   if (!busqueda?.videos?.length) throw new Error('No encontré resultados.')
@@ -34,18 +27,17 @@ export default {
   run: async ({ msg, sock, args, usedPrefix: prefix }) => {
     const texto = args.join(' ').trim()
     if (!texto) {
-      return msg.reply(`❗ *Uso:* ${prefix}play <nombre de canción>\n\n*Ejemplo:* ${prefix}play Ozuna una flor`)
+      return msg.reply(`❗ Escribe algo para buscar.\n\nEjemplo: *${prefix}play Ozuna una flor*`)
     }
 
     try {
       await msg.react('🔍')
 
-      // 1. BUSCAR
+      // 1. BUSCAMOS PRIMERO EN YOUTUBE
       const video = await getYouTubeInfo(texto)
 
+      // 2. LE PASAMOS LA URL A NYX
       await msg.react('⬇️')
-
-      // 2. PEDIR A NYX
       const endpoint = `${API_URL}?apikey=${API_KEY}&url=${encodeURIComponent(video.url)}`
       const res = await fetch(endpoint, { timeout: 90000 })
       if (!res.ok) throw new Error(`Error del servidor: ${res.status}`)
@@ -59,41 +51,31 @@ export default {
 
       const nombreArchivo = cleanName(result.title)
 
-      // 3. FICHA BONITA
-      const info = `╭━━━〔 *NYX MUSIC* 〕━━━╮
-│
-│ 🎵 *Título:* ${result.title}
-│ 👤 *Artista:* ${video.author.name}
-│ ⏱️ *Duración:* ${formatDuration(result.duration)}
-│ 👀 *Vistas:* ${formatViews(video.views)}
-│ 🔗 *Link:* ${video.url}
-│
-╰━━━ Descargando audio... ━━━╯`
+      const info = `╭─『YOUTUBE PLAY』─╮\n` +
+                   `│\n` +
+                   `│ 🎵 *${result.title}*\n` +
+                   `│\n` +
+                   `│ 👤 Canal: ${video.author.name}\n` +
+                   `│ ⏱️ Duración: ${formatDuration(result.duration)}\n` +
+                   `│ 👀 Vistas: ${video.views?.toLocaleString() || 'N/A'}\n` +
+                   `│\n` +
+                   `╰── Descargando audio...`
 
       await sock.sendMessage(msg.chat, {
         image: { url: result.thumbnail },
         caption: info
       }, { quoted: msg })
 
-      // 4. DESCARGAR AUDIO
+      // 3. DESCARGAMOS EL AUDIO
       const audioRes = await fetch(mp3Url)
       if(!audioRes.ok) throw new Error('No se pudo descargar el audio')
       const audioBuffer = await audioRes.buffer()
 
-      // 5. ENVIAR CON BOTONES
+      // 4. LO MANDAMOS
       await sock.sendMessage(msg.chat, {
         audio: audioBuffer,
         mimetype: 'audio/mp4',
-        fileName: `${nombreArchivo}.mp3`,
-        contextInfo: {
-          externalAdReply: {
-            title: result.title,
-            body: video.author.name,
-            thumbnailUrl: result.thumbnail,
-            mediaType: 2,
-            sourceUrl: video.url
-          }
-        }
+        fileName: `${nombreArchivo}.mp3`
       }, { quoted: msg })
 
       await msg.react('✅')
@@ -101,7 +83,7 @@ export default {
     } catch (err) {
       console.error('[PLAY ERROR]', err)
       await msg.react('❌')
-      msg.reply(`❌ *Error:* ${err.message}\n\nIntenta con otro nombre bro`)
+      msg.reply(`❌ No pude descargar.\n\n📄 Error: ${err.message}`)
     }
   }
 }
