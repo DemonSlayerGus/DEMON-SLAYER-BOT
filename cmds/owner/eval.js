@@ -1,45 +1,14 @@
-import db from "#db"
-import syntaxerror from 'syntax-error'
-import { format } from 'util'
-import { createRequire } from 'module'
-import { fileURLToPath } from 'url'
-import { dirname } from 'path'
-
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
-const require = createRequire(__dirname)
-
 export default {
-  command: ['eval', 'e'],
-  isOwner: true,
-  run: async ({ msg, sock, args, command, text }) => {
-
-    if (!text) return await sock.sendMessage(msg.chat, { text: 'Ingresa código' }, { quoted: msg })
-
-    let code = text
-    let _return
-    let _syntax = ''
-    if (command === 'e' || command === 'eval') {
-      code = 'return ' + code
-    }
-
+  command: ['eval', 'ejecutar'],
+  category: 'owner',
+  owner: true,
+  run: async ({ msg, sock, text }) => {
+    if (!text) return sock.sendMessage(msg.chat, { text: `❌ *Uso:*.eval codigo` }, { quoted: msg })
     try {
-      let f = { exports: {} }
-      let exec = new (async () => { }).constructor('sock','msg','require','args','module','exports',code)
-      _return = await exec.call(sock, sock, msg, require, args, f, f.exports)
-    } catch (e) {
-      let err = syntaxerror(code, 'Eval Error', { allowReturnOutsideFunction: true, allowAwaitOutsideFunction: true, sourceType: 'module' })
-      if (err) _syntax = '```' + err + '```\n\n'
-      _return = e
+      let res = await eval(text)
+      sock.sendMessage(msg.chat, { text: `「✦」*Resultado:*\n${res}` }, { quoted: msg })
+    } catch(e) {
+      sock.sendMessage(msg.chat, { text: `❌ *Error:* ${e}` }, { quoted: msg })
     }
-    
-    let output = _return
-    if (output === undefined) output = 'undefined'
-    if (output === null) output = 'null'
-    if (typeof output === 'object') output = format(output)
-
-    return await sock.sendMessage(msg.chat, { 
-      text: `⚙️ *EVAL RESULT* 🩸\n\n${_syntax}\`\`${output}\`\`` 
-    }, { quoted: msg })
   }
 }
