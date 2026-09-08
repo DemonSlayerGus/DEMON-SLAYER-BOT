@@ -18,11 +18,11 @@
     },
     "51980730680@s.whatsapp.net": {
       "name": "GUS",
-      "exp": 16441,
+      "exp": 17208,
       "sugCooldown": 0,
-      "level": 12,
+      "level": 13,
       "Subs": 0,
-      "usedcommands": 330,
+      "usedcommands": 345,
       "pasatiempo": "",
       "description": "",
       "marry": "",
@@ -3269,11 +3269,11 @@
           "cmds": 180
         },
         "2026-09-08": {
-          "msgs": 92,
-          "cmds": 78
+          "msgs": 114,
+          "cmds": 93
         }
       },
-      "usedTime": "2026-09-08T15:37:36.369Z",
+      "usedTime": "2026-09-08T15:53:39.763Z",
       "warnings": [],
       "chat_id": "120363428996880036@g.us",
       "user_id": "51980730680@s.whatsapp.net"
@@ -3590,7 +3590,7 @@
           "cmds": 4
         },
         "2026-09-08": {
-          "msgs": 36,
+          "msgs": 37,
           "cmds": 0
         }
       },
@@ -3998,7 +3998,7 @@
           "cmds": 0
         },
         "2026-09-08": {
-          "msgs": 2,
+          "msgs": 5,
           "cmds": 0
         }
       },
@@ -4315,7 +4315,7 @@
           "cmds": 7
         },
         "2026-09-08": {
-          "msgs": 14,
+          "msgs": 19,
           "cmds": 0
         }
       },
@@ -5990,6 +5990,10 @@
         "2026-09-07": {
           "msgs": 245,
           "cmds": 0
+        },
+        "2026-09-08": {
+          "msgs": 1,
+          "cmds": 0
         }
       },
       "usedTime": null,
@@ -6482,7 +6486,7 @@
           "cmds": 4
         },
         "2026-09-08": {
-          "msgs": 19,
+          "msgs": 21,
           "cmds": 0
         }
       },
@@ -6659,7 +6663,7 @@
           "cmds": 6
         },
         "2026-09-08": {
-          "msgs": 234,
+          "msgs": 235,
           "cmds": 1
         }
       },
@@ -7478,7 +7482,7 @@
           "cmds": 2
         },
         "2026-09-08": {
-          "msgs": 111,
+          "msgs": 118,
           "cmds": 0
         }
       },
@@ -8204,7 +8208,7 @@
         "#",
         "."
       ],
-      "commandsejecut": 456,
+      "commandsejecut": 471,
       "type": "Sub",
       "link": "https://api.stellarwa.xyz",
       "banner": "https://nube.stellarwa.xyz/rf/Zllhqcb8iUug.jpg",

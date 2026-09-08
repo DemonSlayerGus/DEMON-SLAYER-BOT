@@ -9,7 +9,7 @@ import { getCachedMeta, setCachedMeta } from '#serialize';
 
 export default async (sock, msg) => {
 
-  if (msg.fromMe && !msg.key.participant && msg.isBot) return;  
+  if (msg.fromMe &&!msg.key.participant && msg.isBot) return;
   const sender = msg.sender;
   let body = msg.body || '';
 
@@ -17,10 +17,10 @@ const from = msg.key.remoteJid
 const botJid = sock.user.id.split(':')[0] + '@s.whatsapp.net' || sock.user.lid
 
 const chatData = await db.getChat(msg.chat)
-const settings = await db.getSettings(botJid)  
+const settings = await db.getSettings(botJid)
 
   const isOwner = global.owner.map(num => num + '@s.whatsapp.net').includes(sender);
-  const isROwner = [botJid, ...(settings.owner ? [settings.owner] : []), ...global.owner.map(num => num + '@s.whatsapp.net')].includes(sender);
+  const isROwner = [botJid,...(settings.owner? [settings.owner] : []),...global.owner.map(num => num + '@s.whatsapp.net')].includes(sender);
 
   let groupMetadata = null;
   let groupName = '';
@@ -36,13 +36,13 @@ const settings = await db.getSettings(botJid)
   const adminSet = new Set(participants.filter(p => p.admin === 'admin' || p.admin === 'superadmin').flatMap(p => [p.id?.split('@')[0], p.lid?.split('@')[0], p.phoneNumber?.split('@')[0]].filter(Boolean)));
   const senderBase = sender.split('@')[0];
   const botBase = botJid.split('@')[0];
-  const isBotAdmins = msg.isGroup ? adminSet.has(botBase) : false;
-  const isAdmins = msg.isGroup ? adminSet.has(senderBase) : false;
+  const isBotAdmins = msg.isGroup? adminSet.has(botBase) : false;
+  const isAdmins = msg.isGroup? adminSet.has(senderBase) : false;
 
-  Promise.allSettled((global.cmdsExecute ?? []).filter(p => p.type === 'all').map(p => p.fn({ msg, sock, groupMetadata, participants, isAdmins, isBotAdmins, isOwner, __dirname: p.dirname }).catch(e => console.error(chalk.gray(`[ ✿ ] Error all-plugin ${p.key}: ${e.message}`)))));
+  Promise.allSettled((global.cmdsExecute?? []).filter(p => p.type === 'all').map(p => p.fn({ msg, sock, groupMetadata, participants, isAdmins, isBotAdmins, isOwner, __dirname: p.dirname }).catch(e => console.error(chalk.gray(`[ ✿ ] Error all-plugin ${p.key}: ${e.message}`)))));
 
 const tf = await db.getChatUser(msg.chat, msg.sender)
-const to = new Date().toLocaleDateString('es-CO', { timeZone: 'America/Bogota', year: 'numeric', month: '2-digit', day: '2-digit' }).split('/').reverse().join('-') 
+const to = new Date().toLocaleDateString('es-CO', { timeZone: 'America/Bogota', year: 'numeric', month: '2-digit', day: '2-digit' }).split('/').reverse().join('-')
 if (!tf.stats) tf.stats = {}
 if (!tf.stats[to]) tf.stats[to] = { msgs: 0, cmds: 0 }
 tf.stats[to].msgs++
@@ -58,7 +58,7 @@ await db.updateChatUser(msg.chat, msg.sender, 'stats', tf.stats)
   prefixes.unshift(namebot);
   let prefix;
   if (Array.isArray(settings.prefijo) || typeof settings.prefijo === 'string') {
-    const prefixArray = Array.isArray(settings.prefijo) ? settings.prefijo : [settings.prefijo];
+    const prefixArray = Array.isArray(settings.prefijo)? settings.prefijo : [settings.prefijo];
     prefix = new RegExp('^(' + prefixes.join('|') + ')?(' + prefixArray.map(p => p.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|') + ')', 'i');
   } else if (settings.prefijo === 1) {
     prefix = new RegExp('^', 'i');
@@ -71,17 +71,17 @@ await db.updateChatUser(msg.chat, msg.sender, 'stats', tf.stats)
   for (const [cmdName, data] of global.comandos) {
     if (!data.customPrefix) continue;
     const cp = data.customPrefix;
-    const ms = cp instanceof RegExp ? [[cp.exec(msg.text), cp]] : Array.isArray(cp) ? cp.map(p => { let r = p instanceof RegExp ? p : new RegExp(strRegex(p)); return [r.exec(msg.text), r]; }) : typeof cp === 'string' ? [[new RegExp(strRegex(cp)).exec(msg.text), new RegExp(strRegex(cp))]] : [[null, null]];
+    const ms = cp instanceof RegExp? [[cp.exec(msg.text), cp]] : Array.isArray(cp)? cp.map(p => { let r = p instanceof RegExp? p : new RegExp(strRegex(p)); return [r.exec(msg.text), r]; }) : typeof cp === 'string'? [[new RegExp(strRegex(cp)).exec(msg.text), new RegExp(strRegex(cp))]] : [[null, null]];
     if (ms.find(p => p[0])) { customCmd = cmdName; pluginPrefix = cp; break; }
   }
-  let matchs = pluginPrefix instanceof RegExp ? [[pluginPrefix.exec(msg.text), pluginPrefix]] : Array.isArray(pluginPrefix) ? pluginPrefix.map(p => {
-    let regex = p instanceof RegExp ? p : new RegExp(strRegex(p));
+  let matchs = pluginPrefix instanceof RegExp? [[pluginPrefix.exec(msg.text), pluginPrefix]] : Array.isArray(pluginPrefix)? pluginPrefix.map(p => {
+    let regex = p instanceof RegExp? p : new RegExp(strRegex(p));
     return [regex.exec(msg.text), regex];
-  }) : typeof pluginPrefix === 'string' ? [[new RegExp(strRegex(pluginPrefix)).exec(msg.text), new RegExp(strRegex(pluginPrefix))]] : [[null, null]];
+  }) : typeof pluginPrefix === 'string'? [[new RegExp(strRegex(pluginPrefix)).exec(msg.text), new RegExp(strRegex(pluginPrefix))]] : [[null, null]];
   let match = matchs.find(p => p[0]) || null;
 
-  for (const p of (global.cmdsExecute ?? [])) {
-    if (p.type !== 'before') continue;
+  for (const p of (global.cmdsExecute?? [])) {
+    if (p.type!== 'before') continue;
     try {
       if (await p.fn({ msg, sock, match, groupMetadata, participants, isAdmins, isBotAdmins, isOwner, __dirname: p.dirname })) continue;
     } catch (e) {
@@ -92,7 +92,7 @@ await db.updateChatUser(msg.chat, msg.sender, 'stats', tf.stats)
   if (!match) return;
   let usedPrefix = (match[0] || [])[0] || '';
   let args = msg.text.slice(usedPrefix.length).trim().split(" ");
-  let command = customCmd ?? (args.shift() || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  let command = customCmd?? (args.shift() || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   let text = args.join(' ');
   if (!command) return;
 
@@ -100,22 +100,22 @@ const pushname = msg.pushName || 'Sin nombre'
 
 const consolePrimary = chatData.primaryBot;
 
-if (msg.message || !consolePrimary || consolePrimary === botJid) {
+if (msg.message ||!consolePrimary || consolePrimary === botJid) {
 console.log(`
-𝄢 · • —– ٠ ✤ ٠ —– • · · • —– ٠ ✤ ٠ —– • ·✧༄
+𝄢 · • —– ٠ ✤ ٠ —– • · • —– ٠ ✤ ٠ —– • ·✧༄
 ❚ ▸ ${chalk.cyan('𝐁𝐎𝐓 ❱❱')} ${chalk.bgMagenta(chalk.white.italic(sock.user.name))}
 ❚ ▸ ${chalk.cyan('𝐇𝐎𝐑𝐀𝐑𝐈𝐎 ❱❱')} ${chalk.black.bgWhite(moment().format('DD/MM/YY HH:mm:ss'))}
 ❚ ${chalk.magentaBright('°o.OO.o°°o.OO.o°°o.OO.o°')}
-❚ ▸ ${chalk.green('𝐔𝐒𝐔𝐀𝐑𝐈𝐎 ❱❱')} ${chalk.white(pushname)} / ${chalk.bgMagentaBright.bold(msg.isGroup ? 'Grupo' : 'Chat Private')}
-❚ ▸ ${chalk.green('𝐂𝐎𝐌𝐀𝐍𝐃𝐎 ❱❱')} ${chalk.magentaBright(command ? command : 'No Command')}
+❚ ▸ ${chalk.green('𝐔𝐒𝐔𝐀𝐑𝐈𝐎 ❱❱')} ${chalk.white(pushname)} / ${chalk.bgMagentaBright.bold(msg.isGroup? 'Grupo' : 'Chat Private')}
+❚ ▸ ${chalk.green('𝐂𝐎𝐌𝐀𝐍𝐃𝐎 ❱❱')} ${chalk.magentaBright(command? command : 'No Command')}
 ❚ ${chalk.magentaBright('°o.OO.o°°o.OO.o°°o.OO.o°')}
 ❚ ▸ ${chalk.redBright('𝐓𝐈𝐏𝐎 ❱❱')} ${chalk.greenBright.bold('[Bot Log]')}
 𝄢 · • —– ٠ ✤ ٠ —– • · · • —– ٠ ✤ ٠ —– • ·✧༄`.trim())
 }
 
-  const hasPrefix = settings.prefijo === 1 ? 1 : (Array.isArray(settings.prefijo) ? settings.prefijo : typeof settings.prefijo === 'string' ? [settings.prefijo] : []).some(p => msg.text?.startsWith(p));
+  const hasPrefix = settings.prefijo === 1? 1 : (Array.isArray(settings.prefijo)? settings.prefijo : typeof settings.prefijo === 'string'? [settings.prefijo] : []).some(p => msg.text?.startsWith(p));
   const botprimaryId = chatData?.primaryBot;
-  if (botprimaryId && botprimaryId !== botJid) {
+  if (botprimaryId && botprimaryId!== botJid) {
     if (hasPrefix) {
       const groupJids = participants.map(p => p.id);
       const sessionDirs = ['./Sessions/Subs']
@@ -141,70 +141,74 @@ console.log(`
       const primaryInGroup = groupJids.includes(botprimaryId);
       const isPrimarySelf = botprimaryId === botJid;
       const primaryInSessions = sessionBots.includes(botprimaryId);
-      if (!primaryInSessions || !primaryInGroup) return;
+      if (!primaryInSessions ||!primaryInGroup) return;
       if ((primaryInSessions && primaryInGroup) || isPrimarySelf) return;
     }
   }
 
 const isVotOwn = [
   sock.user.id.split(':')[0] + '@s.whatsapp.net',
-  ...global.owner.map(num => num + '@s.whatsapp.net')
+ ...global.owner.map(num => num + '@s.whatsapp.net')
 ].includes(sender)
 
 if (settings.self) {
   const owner = settings.owner
   if (
-    sender !== owner &&
-    !isVotOwn &&
-    !global.mods.map(num => num + '@s.whatsapp.net').includes(sender)
+    sender!== owner &&
+   !isVotOwn &&
+   !global.mods.map(num => num + '@s.whatsapp.net').includes(sender)
   ) return
 }
 
-if (msg.chat && !msg.chat.endsWith('g.us')) {
+if (msg.chat &&!msg.chat.endsWith('g.us')) {
   const allowedInPrivateForUsers = ['report', 'reporte', 'sug', 'suggest', 'invite', 'invitar', 'setusername', 'setpfp', 'setimage', 'setstatus', 'reload', 'setname', 'setbotname', 'setmenubanner', 'setbanner', 'setbotcurrency', 'code', 'qr', 'setbotowner', 'setlink', 'setbotlink', 'setbotprefix', 'seticon']
   const owners = settings.owner
   if (
-    sender !== owners &&
-    !global.owner.map(num => num + '@s.whatsapp.net').includes(sender) &&
-    !allowedInPrivateForUsers.includes(command)
+    sender!== owners &&
+   !global.owner.map(num => num + '@s.whatsapp.net').includes(sender) &&
+   !allowedInPrivateForUsers.includes(command)
   ) return
 }
 
-if (chatData?.bannedGrupo && !['#bot on', '/bot on', '.bot on', '!bot on', '-bot on', '+bot on', 'bot on'].includes(body.toLowerCase()) &&
-    !global.owner.map(num => num + '@s.whatsapp.net').includes(msg.sender)) return
+if (chatData?.bannedGrupo &&!['#bot on', '/bot on', '.bot on', '!bot on', '-bot on', '+bot on', 'bot on'].includes(body.toLowerCase()) &&
+   !global.owner.map(num => num + '@s.whatsapp.net').includes(msg.sender)) return
 
-if (chatData.adminonly && !isAdmins) return
+if (chatData.adminonly &&!isAdmins) return
 
 if ((msg.id.startsWith("3EB0") || (msg.id.startsWith("BAE5") && msg.id.length === 16) || (msg.id.startsWith("B24E") && msg.id.length === 20))) return
 
 const user = await db.getChatUser(msg.chat, msg.sender)
 
-const today = new Date().toLocaleDateString('es-CO', { 
+const today = new Date().toLocaleDateString('es-CO', {
   timeZone: 'America/Bogota',
   year: 'numeric',
   month: '2-digit',
   day: '2-digit'
-}).split('/').reverse().join('-') 
+}).split('/').reverse().join('-')
 
 if (!user.stats) user.stats = {}
 if (!user.stats[today]) user.stats[today] = { msgs: 0, cmds: 0 }
 
   const cmdData = global.comandos.get(command);
 
+// AQUI ESTA EL CAMBIO BRO
 if (!cmdData) {
   if (settings.prefijo === 1) return
   await sock.readMessages([msg.key])
-  return msg.reply(`ꕤ El comando *${command}* no existe.\n✎ Usa *${usedPrefix}help* para ver la lista de comandos disponibles.`)
+  return msg.reply(`「✦」*Oops*
+El comando *${command}* no existe.
+
+「✦」Usa *${usedPrefix}menu* o *${usedPrefix}help* para ver todos mis comandos.`)
 }
 
 const comando = msg.text.slice(usedPrefix.length)
 
-if (cmdData.isOwner && !global.owner.map(num => num + '@s.whatsapp.net').includes(sender)) {
-  return msg.reply(`ꕤ El comando *${command}* no existe.\n✎ Usa *${usedPrefix}help* para ver la lista de comandos disponibles.`)
+if (cmdData.isOwner &&!global.owner.map(num => num + '@s.whatsapp.net').includes(sender)) {
+  return msg.reply(`「✦」Este comando solo lo puede usar mi *Creador*.`)
 }
 
-if (cmdData.isAdmin && !isAdmins) return sock.reply(msg.chat, mess.admin, msg)
-if (cmdData.botAdmin && !isBotAdmins) return sock.reply(msg.chat, mess.botAdmin, msg)
+if (cmdData.isAdmin &&!isAdmins) return sock.reply(msg.chat, mess.admin, msg)
+if (cmdData.botAdmin &&!isBotAdmins) return sock.reply(msg.chat, mess.botAdmin, msg)
 
 try {
   await sock.sendPresenceUpdate('composing', msg.chat)
