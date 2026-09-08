@@ -23,7 +23,7 @@ const log = {
 
 let phoneNumber = "";
 let phoneInput = "";
-let lineM = '⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ 》'
+let lineM = '⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ 》'
 const methodCodeQR = process.argv.includes("--qr");
 const methodCode = process.argv.includes("code");
 
@@ -35,7 +35,7 @@ function normalizePhone(input) {
   return s;
 }
 
-console.log(chalk.blue.bold('\n INICIANDO SISTEMA ...'))
+console.log(chalk.blue.bold('\n INICIANDO SISTEMA...'))
 console.log(chalk.cyan(`
       Shinobi | Wa Bot
      Powered by Baileys v6.7.0
@@ -47,6 +47,7 @@ const BOT_TYPES = [
 
 if (!fs.existsSync('./lib/system/tmp')) fs.mkdirSync('./lib/system/tmp', { recursive: true });
 global.conns = global.conns || [];
+global.muteados = global.muteados || {}; // PARA EL MUTE
 const reconnecting = new Set();
 const msgStore = new Map();
 const msgLimit = 500;
@@ -111,19 +112,19 @@ if (methodCodeQR) {
     phoneNumber = normalizePhone(phoneInput);
   }
 } else if (!fs.existsSync("./Sessions/Owner/creds.json")) {
-  opcion = readlineSync.question(`╭${lineM}  
-┊ ${chalk.blueBright('╭┅┅┅┅┅┅┅')}
+  opcion = readlineSync.question(`╭${lineM}
+┊ ${chalk.blueBright('╭┅')}
 ┊ ${chalk.blueBright('┊')} ${chalk.blue.bgBlue.bold.cyan('METODO DE VINCULACION')}
-┊ ${chalk.blueBright('╰┅┅┅┅┅┅┅')}   
-┊ ${chalk.blueBright('╭┅┅┅┅┅')}     
+┊ ${chalk.blueBright('╰┅┅┅┅┅┅')}
+┊ ${chalk.blueBright('╭┅┅┅┅┅')}
 ┊ ${chalk.blueBright('┊')} ${chalk.green.bgMagenta.bold.yellow('COMO DESEA CONECTARSE?')}
-┊ ${chalk.blueBright('┊')} ${chalk.bold.redBright('=>  Opcion 1:')} ${chalk.greenBright('Codigo QR.')}
-┊ ${chalk.blueBright('┊')} ${chalk.bold.redBright('=>  Opcion 2:')} ${chalk.greenBright('Codigo de 8 digitos.')}
+┊ ${chalk.blueBright('┊')} ${chalk.bold.redBright('=> Opcion 1:')} ${chalk.greenBright('Codigo QR.')}
+┊ ${chalk.blueBright('┊')} ${chalk.bold.redBright('=> Opcion 2:')} ${chalk.greenBright('Codigo de 8 digitos.')}
 ┊ ${chalk.blueBright('╰┅')}
-┊ ${chalk.blueBright('╭┅')}     
+┊ ${chalk.blueBright('╭┅')}
 ┊ ${chalk.blueBright('┊')} ${chalk.italic.magenta('Escriba solo el numero de')}
 ┊ ${chalk.blueBright('┊')} ${chalk.italic.magenta('la opcion para conectarse.')}
-┊ ${chalk.blueBright('╰┅┅┅┅┅┅┅┅┅┅')} 
+┊ ${chalk.blueBright('╰┅┅┅┅┅┅┅┅┅┅')}
 ╰${lineM}\n${chalk.bold.magentaBright('---> ')}`);
   while (!/^[1-2]$/.test(opcion)) {
     console.log(chalk.bold.redBright(`No se permiten numeros que no sean 1 o 2`));
@@ -152,7 +153,7 @@ async function warmupGroups(sock) {
     await Promise.allSettled(chatIds.map(async id => {
       try {
         const meta = await sock.groupMetadata(id)
-        if (meta) setCachedMeta(id, meta) 
+        if (meta) setCachedMeta(id, meta)
       } catch {}
     }))
     console.log(chalk.gray(`[ ✿ ] Warmup completado en ${Date.now() - t}ms`))
@@ -169,15 +170,15 @@ export async function startBot() {
   const { version } = await fetchLatestBaileysVersion();
   console.info = () => {};
   console.debug = () => {};
-  
+
   const sock = makeWASocket({
     version,
     logger: pino({ level: 'silent' }),
     browser: Browsers.macOS('Chrome'),
     printQRInTerminal: false,
-    auth: { 
-      creds: state.creds, 
-      keys: makeCacheableSignalKeyStore(state.keys, pino({ level: 'silent' })) 
+    auth: {
+      creds: state.creds,
+      keys: makeCacheableSignalKeyStore(state.keys, pino({ level: 'silent' }))
     },
     markOnlineOnConnect: false,
     syncFullHistory: false,
@@ -195,9 +196,9 @@ export async function startBot() {
 
   global.sock = sock;
   sock.ev.on("creds.update", saveCreds);
-  
-  sock.sendText = (jid, text, quoted = "", options) => sock.sendMessage(jid, { text, ...options }, { quoted });
-  
+
+  sock.sendText = (jid, text, quoted = "", options) => sock.sendMessage(jid, { text,...options }, { quoted });
+
   sock.decodeJid = (jid) => {
     if (!jid) return jid;
     if (/:\d+@/gi.test(jid)) {
@@ -208,7 +209,7 @@ export async function startBot() {
   };
 
   // CÓDIGO DE 8 DÍGITOS
-  if (opcion === "2" && !state.creds.registered) {
+  if (opcion === "2" &&!state.creds.registered) {
     await new Promise(resolve => setTimeout(resolve, 3000));
     try {
       let code = await sock.requestPairingCode(phoneNumber);
@@ -222,8 +223,23 @@ export async function startBot() {
 
   sock.ev.on("messages.upsert", async ({ messages, type }) => {
     if (!botReady) return;
-    if (type !== 'notify') return;
+    if (type!== 'notify') return;
     for (const msg of messages) {
+
+      // ===== ANTI MUTE START =====
+      global.muteados = global.muteados || {}
+      let chat = msg.key.remoteJid
+      let sender = msg.key.participant || msg.key.remoteJid
+      let isGroup = chat.endsWith('@g.us')
+
+      if (isGroup && global.muteados[chat]?.includes(sender)) {
+        try {
+          await sock.sendMessage(chat, { delete: msg.key })
+        } catch(e) {}
+        continue // no procesa el mensaje
+      }
+      // ===== ANTI MUTE END =====
+
       if (msg?.message && msg?.key?.id) {
         const sid = msg.key.remoteJid + ':' + msg.key.id;
         msgStore.set(sid, msg.message);
@@ -245,7 +261,7 @@ export async function startBot() {
 
   sock.ev.on("connection.update", async (update) => {
     const { qr, connection, lastDisconnect, isNewLogin, receivedPendingNotifications } = update;
-    
+
     if (qr && opcion == '1') {
       console.log(chalk.green.bold("[ ✿ ] Escanea este código QR"));
       qrcode.generate(qr, { small: true });
@@ -264,7 +280,7 @@ export async function startBot() {
     }
 
     if (isNewLogin) log.info("Nuevo dispositivo detectado");
-    
+
     if (receivedPendingNotifications === true) {
       log.warn("Sincronizando... espera máximo 1 minuto.");
       setTimeout(() => log.info("Sincronización completada"), 60000);
