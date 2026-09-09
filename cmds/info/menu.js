@@ -51,15 +51,41 @@ export default {
         categories[category].push(cmd)
       }
 
-      if (categoryArg &&!categories[categoryArg]) {
+      if (categoryArg && !categories[categoryArg]) {
         return await msg.reply(`🩸 La categoría *${categoryArg}* no existe.\nUsa: *${prefix}menu*`)
       }
 
-      const catEmojis = {info: '📜', downloader: '📥', fun: '🎭', group: '👥', owner: '👑', ai: '🤖', sticker: '🏷️', search: '🔍', otros: '⚔️'}
-      const catNamesDS = {info: 'INFORMACIÓN', downloader: 'DESCARGAS', fun: 'DIVERSIÓN', group: 'GRUPOS', owner: 'OWNER', ai: 'IA', sticker: 'STICKERS', search: 'BÚSQUEDAS', otros: 'OTROS'}
+      // ✅ Agregué la categoría RPG con su emoji y nombre
+      const catEmojis = {
+        info: '📜',
+        downloader: '📥',
+        fun: '🎭',
+        group: '👥',
+        owner: '👑',
+        ai: '🤖',
+        sticker: '🏷️',
+        search: '🔍',
+        rpg: '🎮',        // ← NUEVA: Juegos y economía
+        diversion: '💫',   // ← Si tienes frases, piropos, etc.
+        otros: '⚔️'
+      }
+
+      const catNamesDS = {
+        info: 'INFORMACIÓN',
+        downloader: 'DESCARGAS',
+        fun: 'DIVERSIÓN',
+        group: 'GRUPOS',
+        owner: 'OWNER',
+        ai: 'IA',
+        sticker: 'STICKERS',
+        search: 'BÚSQUEDAS',
+        rpg: '🎮 RPG / JUEGOS',     // ← NUEVA
+        diversion: '💫 DIVERSIÓN',   // ← Frases, piropos, etc.
+        otros: 'OTROS'
+      }
 
       for (const [category, cmds] of Object.entries(categories)) {
-        if (categoryArg && category.toLowerCase()!== categoryArg) continue;
+        if (categoryArg && category.toLowerCase() !== categoryArg) continue;
         const catName = catNamesDS[category] || category.toUpperCase();
         const emoji = catEmojis[category] || '⚔️';
         menu += `\n╭─${emoji} *${catName}* ─╮\n`;
@@ -95,11 +121,3 @@ export default {
     }
   },
 };
-
-function formatearMs(ms) {
-  const segundos = Math.floor(ms / 1000);
-  const minutos = Math.floor(segundos / 60);
-  const horas = Math.floor(minutos / 60);
-  const dias = Math.floor(horas / 24);
-  return [dias && `${dias}d`, `${horas % 24}h`, `${minutos % 60}m`, `${segundos % 60}s`].filter(Boolean).join(' ');
-}
