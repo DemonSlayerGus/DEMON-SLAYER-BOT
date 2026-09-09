@@ -1,6 +1,6 @@
 export default {
   command: ["amor", "compatibilidad", "flechazo"],
-  category: "diversion",
+  category: "economy",
   run: async ({ msg, sock }) => {
     try {
       let persona1 = msg.sender
