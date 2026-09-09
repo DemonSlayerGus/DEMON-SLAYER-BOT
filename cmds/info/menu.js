@@ -55,7 +55,7 @@ export default {
         return await msg.reply(`🩸 La categoría *${categoryArg}* no existe.\nUsa: *${prefix}menu*`)
       }
 
-      // ✅ Agregué la categoría RPG con su emoji y nombre
+      // 🗡️ Categorías — todo lo de economía aquí, sin rpg
       const catEmojis = {
         info: '📜',
         downloader: '📥',
@@ -65,23 +65,33 @@ export default {
         ai: '🤖',
         sticker: '🏷️',
         search: '🔍',
-        rpg: '🎮',        // ← NUEVA: Juegos y economía
-        diversion: '💫',   // ← Si tienes frases, piropos, etc.
+        economia: '💰',
+        gacha: '🎴',
+        nsfw: '🔞',
+        profile: '👤',
+        sockets: '⚙️',
+        utils: '🛠️',
+        anime: '🎨',
         otros: '⚔️'
       }
 
       const catNamesDS = {
-        info: 'INFORMACIÓN',
-        downloader: 'DESCARGAS',
-        fun: 'DIVERSIÓN',
-        group: 'GRUPOS',
-        owner: 'OWNER',
-        ai: 'IA',
-        sticker: 'STICKERS',
-        search: 'BÚSQUEDAS',
-        rpg: '🎮 RPG / JUEGOS',     // ← NUEVA
-        diversion: '💫 DIVERSIÓN',   // ← Frases, piropos, etc.
-        otros: 'OTROS'
+        info: '📜 INFORMACIÓN',
+        downloader: '📥 DESCARGAS',
+        fun: '🎭 DIVERSIÓN',
+        group: '👥 GRUPOS',
+        owner: '👑 OWNER',
+        ai: '🤖 INTELIGENCIA ARTIFICIAL',
+        sticker: '🏷️ STICKERS',
+        search: '🔍 BÚSQUEDAS',
+        economia: '💰 ECONOMÍA / JUEGOS',
+        gacha: '🎴 GACHA / WAIFUS',
+        nsfw: '🔞 NSFW',
+        profile: '👤 PERFIL',
+        sockets: '⚙️ SOCKETS / CONFIG',
+        utils: '🛠️ UTILIDADES',
+        anime: '🎨 ANIME / ACCIONES',
+        otros: '⚔️ OTROS'
       }
 
       for (const [category, cmds] of Object.entries(categories)) {
