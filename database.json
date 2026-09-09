@@ -18,11 +18,11 @@
     },
     "51980730680@s.whatsapp.net": {
       "name": "GUS",
-      "exp": 32039,
+      "exp": 32167,
       "sugCooldown": 1788989094445,
       "level": 17,
       "Subs": 1788910969405,
-      "usedcommands": 644,
+      "usedcommands": 646,
       "pasatiempo": "",
       "description": "",
       "marry": "",
@@ -5184,7 +5184,7 @@
           "cmds": 3
         },
         "2026-09-08": {
-          "msgs": 10,
+          "msgs": 16,
           "cmds": 0
         }
       },
@@ -5431,7 +5431,7 @@
           "cmds": 9
         },
         "2026-09-08": {
-          "msgs": 69,
+          "msgs": 72,
           "cmds": 2
         }
       },
@@ -5748,7 +5748,7 @@
           "cmds": 3
         },
         "2026-09-08": {
-          "msgs": 332,
+          "msgs": 333,
           "cmds": 4
         }
       },
@@ -5954,7 +5954,7 @@
           "cmds": 0
         },
         "2026-09-08": {
-          "msgs": 26,
+          "msgs": 28,
           "cmds": 0
         }
       },
@@ -6090,7 +6090,7 @@
           "cmds": 0
         },
         "2026-09-08": {
-          "msgs": 130,
+          "msgs": 134,
           "cmds": 0
         }
       },
@@ -6201,7 +6201,7 @@
           "cmds": 33
         },
         "2026-09-08": {
-          "msgs": 136,
+          "msgs": 137,
           "cmds": 20
         }
       },
@@ -8021,7 +8021,7 @@
           "cmds": 0
         },
         "2026-09-08": {
-          "msgs": 73,
+          "msgs": 75,
           "cmds": 0
         }
       },
@@ -8655,7 +8655,7 @@
           "cmds": 6
         },
         "2026-09-08": {
-          "msgs": 294,
+          "msgs": 298,
           "cmds": 1
         }
       },
@@ -12139,11 +12139,11 @@
       "buyCooldown": 0,
       "stats": {
         "2026-09-08": {
-          "msgs": 2,
-          "cmds": 2
+          "msgs": 4,
+          "cmds": 4
         }
       },
-      "usedTime": "2026-09-09T00:13:51.738Z",
+      "usedTime": "2026-09-09T00:21:05.643Z",
       "warnings": [],
       "chat_id": "120363429990485000@g.us",
       "user_id": "51980730680@s.whatsapp.net"
@@ -12157,7 +12157,7 @@
         "#",
         "."
       ],
-      "commandsejecut": 850,
+      "commandsejecut": 852,
       "type": "Sub",
       "link": "https://api.stellarwa.xyz",
       "banner": "https://nube.stellarwa.xyz/rf/Zllhqcb8iUug.jpg",
