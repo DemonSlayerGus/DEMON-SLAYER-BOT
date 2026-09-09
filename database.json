@@ -18,11 +18,11 @@
     },
     "51980730680@s.whatsapp.net": {
       "name": "☆GUS☆",
-      "exp": 39209,
+      "exp": 39310,
       "sugCooldown": 1788989094445,
       "level": 19,
       "Subs": 1788914622495,
-      "usedcommands": 793,
+      "usedcommands": 796,
       "pasatiempo": "",
       "description": "",
       "marry": "",
@@ -130,11 +130,11 @@
     },
     "5215658414636@s.whatsapp.net": {
       "name": "Santiago",
-      "exp": 651,
+      "exp": 855,
       "sugCooldown": 0,
       "level": 2,
       "Subs": 0,
-      "usedcommands": 11,
+      "usedcommands": 16,
       "pasatiempo": "",
       "description": "",
       "marry": "",
@@ -5842,9 +5842,9 @@
       "user_id": "224360904306747@lid"
     },
     "120363430974350908@g.us:5215658414636@s.whatsapp.net": {
-      "coins": 0,
+      "coins": 2746,
       "bank": 0,
-      "lastdungeon": 0,
+      "lastdungeon": 1788963602571,
       "lasthunt": 0,
       "lastfish": 0,
       "lastslot": 0,
@@ -5852,7 +5852,7 @@
       "characters": [],
       "personajesEnVenta": [],
       "crimeCooldown": 0,
-      "mineCooldown": 0,
+      "mineCooldown": 1788963262900,
       "ritualCooldown": 0,
       "workCooldown": 0,
       "rtCooldown": 0,
@@ -5873,11 +5873,11 @@
           "cmds": 6
         },
         "2026-09-09": {
-          "msgs": 29,
-          "cmds": 0
+          "msgs": 35,
+          "cmds": 4
         }
       },
-      "usedTime": "2026-09-08T23:35:01.728Z",
+      "usedTime": "2026-09-09T14:04:43.350Z",
       "warnings": [],
       "chat_id": "120363430974350908@g.us",
       "user_id": "5215658414636@s.whatsapp.net"
@@ -10773,11 +10773,11 @@
           "cmds": 12
         },
         "2026-09-09": {
-          "msgs": 36,
-          "cmds": 28
+          "msgs": 39,
+          "cmds": 31
         }
       },
-      "usedTime": "2026-09-09T14:00:08.721Z",
+      "usedTime": "2026-09-09T14:05:10.264Z",
       "warnings": [],
       "chat_id": "120363409845238176@g.us",
       "user_id": "51980730680@s.whatsapp.net"
@@ -11212,9 +11212,13 @@
         "2026-09-08": {
           "msgs": 190,
           "cmds": 29
+        },
+        "2026-09-09": {
+          "msgs": 1,
+          "cmds": 1
         }
       },
-      "usedTime": null,
+      "usedTime": "2026-09-09T14:00:11.539Z",
       "warnings": [],
       "chat_id": "120363427853695963@g.us",
       "user_id": "5215658414636@s.whatsapp.net"
@@ -13324,7 +13328,7 @@
         "#",
         "."
       ],
-      "commandsejecut": 1047,
+      "commandsejecut": 1055,
       "type": "Sub",
       "link": "https://api.stellarwa.xyz",
       "banner": "https://nube.stellarwa.xyz/rf/Zllhqcb8iUug.jpg",
