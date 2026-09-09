@@ -1,89 +1,74 @@
-import yts from 'yt-search'
-import fetch from 'node-fetch'
+import fetch from "node-fetch"
 
-const API_KEY = 'nyx_787L2nSRmybr98xh2T7eR7Xr2WUXKdyx'
-const API_URL = 'https://nyxdlapi.vercel.app/api/downloads/youtube'
-
-function cleanName(name) {
-  return String(name || 'audio').replace(/[^\w\s._-]/gi, '').trim().substring(0, 70)
-}
-
-function formatDuration(sec) {
-  if (!sec) return 'No disponible'
-  const m = Math.floor(sec / 60)
-  const s = sec % 60
-  return `${m}:${s.toString().padStart(2, '0')}`
-}
-
-async function getYouTubeInfo(query) {
-  const busqueda = await yts(query)
-  if (!busqueda?.videos?.length) throw new Error('No encontré resultados.')
-  return busqueda.videos[0]
-}
+const API_URL = "https://api-yosoyyo-api-ofc.onrender.com/api/youtube"
+const API_KEY = "yosoyyo_sk_dk72d73o"
 
 export default {
-  command: ['play', 'mp3', 'ytmp3', 'playaudio'],
-  category: 'downloader',
-  run: async ({ msg, sock, args, usedPrefix: prefix }) => {
-    const texto = args.join(' ').trim()
-    if (!texto) {
-      return msg.reply(`❗ Escribe algo para buscar.\n\nEjemplo: *${prefix}play Ozuna una flor*`)
-    }
-
+  command: ["play", "mp3", "ytmp3", "ytaudio", "playaudio"],
+  category: "downloader",
+  run: async ({ msg, sock, args }) => {
     try {
-      await msg.react('🔍')
+      if (!args[0]) {
+        return msg.reply("《✧》Uso: .play nombre o canción")
+      }
 
-      // 1. BUSCAMOS PRIMERO EN YOUTUBE
-      const video = await getYouTubeInfo(texto)
+      const text = args.join(" ")
+      await msg.react("🎧")
 
-      // 2. LE PASAMOS LA URL A NYX
-      await msg.react('⬇️')
-      const endpoint = `${API_URL}?apikey=${API_KEY}&url=${encodeURIComponent(video.url)}`
-      const res = await fetch(endpoint, { timeout: 90000 })
-      if (!res.ok) throw new Error(`Error del servidor: ${res.status}`)
-
+      const searchUrl = `${API_URL}?q=${encodeURIComponent(text)}&apiKey=${API_KEY}`
+      const res = await fetch(searchUrl, { timeout: 20000 })
       const data = await res.json()
-      if (!data.status) throw new Error('Nyx no pudo procesar el video')
 
-      const result = data.result
-      const mp3Url = result.download_url || result.download || result.url
-      if (!mp3Url) throw new Error('No se obtuvo el enlace de descarga.')
+      // ✅ Aceptar también si no viene status=200 pero sí hay resultados
+      if (!data.result || !Array.isArray(data.result) || !data.result.length) {
+        return msg.reply("《✧》 No encontré resultados 😔")
+      }
 
-      const nombreArchivo = cleanName(result.title)
+      const video = data.result[0]
 
-      const info = `╭─『YOUTUBE PLAY』─╮\n` +
-                   `│\n` +
-                   `│ 🎵 *${result.title}*\n` +
-                   `│\n` +
-                   `│ 👤 Canal: ${video.author.name}\n` +
-                   `│ ⏱️ Duración: ${formatDuration(result.duration)}\n` +
-                   `│ 👀 Vistas: ${video.views?.toLocaleString() || 'N/A'}\n` +
-                   `│\n` +
-                   `╰── Descargando audio...`
+      // 🔍 Probar TODAS las rutas donde puede estar el enlace MP3
+      let mp3Url = ""
+      
+      if (video.download?.mp3 && video.download.mp3.trim()) {
+        mp3Url = video.download.mp3
+      } else if (video.downloads?.mp3?.url && video.downloads.mp3.url.trim()) {
+        mp3Url = video.downloads.mp3.url
+      } else if (video.downloads?.mixed?.mp3 && video.downloads.mixed.mp3.trim()) {
+        mp3Url = video.downloads.mixed.mp3
+      }
 
+      if (!mp3Url) {
+        return msg.reply("《✧》 El enlace de descarga no está disponible 😔\nPrueba con otra canción")
+      }
+
+      // 📤 Enviar información
       await sock.sendMessage(msg.chat, {
-        image: { url: result.thumbnail },
-        caption: info
+        text: `🎧 *DEMON PLAY* 🥷
+
+📌 *Título:* ${video.title}
+📺 *Canal:* ${video.channelName || "Desconocido"}
+⏱️ *Duración:* ${video.duration || "Desconocida"}
+
+> Descargando audio... 🎶`
       }, { quoted: msg })
 
-      // 3. DESCARGAMOS EL AUDIO
-      const audioRes = await fetch(mp3Url)
-      if(!audioRes.ok) throw new Error('No se pudo descargar el audio')
-      const audioBuffer = await audioRes.buffer()
-
-      // 4. LO MANDAMOS
+      // ⬇️ Descargar y enviar como buffer
+      const audioRes = await fetch(mp3Url, { timeout: 60000 })
+      if (!audioRes.ok) throw new Error(`Error al descargar: ${audioRes.status}`)
+      
+      const audioBuffer = Buffer.from(await audioRes.arrayBuffer())
+      
       await sock.sendMessage(msg.chat, {
         audio: audioBuffer,
-        mimetype: 'audio/mp4',
-        fileName: `${nombreArchivo}.mp3`
+        mimetype: "audio/mpeg",
+        fileName: `${video.title}.mp3`
       }, { quoted: msg })
 
-      await msg.react('✅')
+      await msg.react("✅")
 
     } catch (err) {
-      console.error('[PLAY ERROR]', err)
-      await msg.react('❌')
-      msg.reply(`❌ No pude descargar.\n\n📄 Error: ${err.message}`)
+      console.error("❌ Error:", err)
+      return msg.reply("《✧》 Ocurrió un error 😔\n> " + err.message)
     }
   }
 }
