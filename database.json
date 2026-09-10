@@ -18,11 +18,11 @@
     },
     "51980730680@s.whatsapp.net": {
       "name": "☆GUS☆",
-      "exp": 51446,
+      "exp": 52388,
       "sugCooldown": 1788989094445,
       "level": 22,
       "Subs": 1788914622495,
-      "usedcommands": 1033,
+      "usedcommands": 1051,
       "pasatiempo": "",
       "description": "",
       "marry": "",
@@ -418,11 +418,11 @@
     },
     "5216623572734@s.whatsapp.net": {
       "name": "{~💜BrUjItA💜~}",
-      "exp": 5935,
+      "exp": 5999,
       "sugCooldown": 0,
       "level": 7,
       "Subs": 0,
-      "usedcommands": 128,
+      "usedcommands": 129,
       "pasatiempo": "🎧 Escuchar música",
       "description": "",
       "marry": "5212225237061@s.whatsapp.net",
@@ -6371,7 +6371,7 @@
           "cmds": 3
         },
         "2026-09-09": {
-          "msgs": 257,
+          "msgs": 258,
           "cmds": 38
         }
       },
@@ -6454,7 +6454,7 @@
           "cmds": 6
         },
         "2026-09-09": {
-          "msgs": 616,
+          "msgs": 634,
           "cmds": 218
         }
       },
@@ -6681,7 +6681,7 @@
           "cmds": 0
         },
         "2026-09-09": {
-          "msgs": 221,
+          "msgs": 238,
           "cmds": 53
         }
       },
@@ -6723,7 +6723,7 @@
           "cmds": 10
         },
         "2026-09-09": {
-          "msgs": 309,
+          "msgs": 316,
           "cmds": 40
         }
       },
@@ -7086,7 +7086,7 @@
           "cmds": 0
         },
         "2026-09-09": {
-          "msgs": 193,
+          "msgs": 194,
           "cmds": 13
         }
       },
@@ -7164,7 +7164,7 @@
           "cmds": 14
         },
         "2026-09-09": {
-          "msgs": 102,
+          "msgs": 105,
           "cmds": 12
         }
       },
@@ -7205,11 +7205,11 @@
           "cmds": 35
         },
         "2026-09-09": {
-          "msgs": 143,
-          "cmds": 60
+          "msgs": 149,
+          "cmds": 61
         }
       },
-      "usedTime": "2026-09-10T00:17:30.926Z",
+      "usedTime": "2026-09-10T00:39:23.034Z",
       "warnings": [],
       "chat_id": "120363430974350908@g.us",
       "user_id": "5216623572734@s.whatsapp.net"
@@ -7287,7 +7287,7 @@
           "cmds": 0
         },
         "2026-09-09": {
-          "msgs": 29,
+          "msgs": 33,
           "cmds": 0
         }
       },
@@ -7439,7 +7439,7 @@
           "cmds": 13
         },
         "2026-09-09": {
-          "msgs": 190,
+          "msgs": 202,
           "cmds": 22
         }
       },
@@ -8081,7 +8081,7 @@
           "cmds": 0
         },
         "2026-09-09": {
-          "msgs": 6,
+          "msgs": 16,
           "cmds": 0
         }
       },
@@ -9089,7 +9089,7 @@
           "cmds": 0
         },
         "2026-09-09": {
-          "msgs": 1,
+          "msgs": 3,
           "cmds": 0
         }
       },
@@ -9858,7 +9858,7 @@
           "cmds": 0
         },
         "2026-09-09": {
-          "msgs": 28,
+          "msgs": 29,
           "cmds": 0
         }
       },
@@ -10491,7 +10491,7 @@
           "cmds": 0
         },
         "2026-09-09": {
-          "msgs": 33,
+          "msgs": 37,
           "cmds": 0
         }
       },
@@ -13414,11 +13414,11 @@
           "cmds": 105
         },
         "2026-09-09": {
-          "msgs": 151,
-          "cmds": 131
+          "msgs": 169,
+          "cmds": 149
         }
       },
-      "usedTime": "2026-09-10T00:38:37.273Z",
+      "usedTime": "2026-09-10T00:56:15.275Z",
       "warnings": [],
       "chat_id": "120363429990485000@g.us",
       "user_id": "51980730680@s.whatsapp.net",
@@ -15153,7 +15153,7 @@
         "#",
         "."
       ],
-      "commandsejecut": 1829,
+      "commandsejecut": 1848,
       "type": "Sub",
       "link": "https://api.stellarwa.xyz",
       "banner": "https://nube.stellarwa.xyz/rf/Zllhqcb8iUug.jpg",
