@@ -98,5 +98,73 @@
       "name": "GUS",
       "content": ". gitpush"
     }
+  ],
+  "120363429990485000@g.us": [
+    {
+      "role": "user",
+      "name": "☆GUS☆",
+      "content": ".menu"
+    },
+    {
+      "role": "user",
+      "name": "☆GUS☆",
+      "content": ".adivina"
+    },
+    {
+      "role": "user",
+      "name": "☆GUS☆",
+      "content": "Hola"
+    },
+    {
+      "role": "user",
+      "name": "☆GUS☆",
+      "content": ".hack"
+    },
+    {
+      "role": "user",
+      "name": "☆GUS☆",
+      "content": ".agregarcomando tinder / Citas a ciegas con ganancias o pérdidas / cita / economia /"
+    },
+    {
+      "role": "user",
+      "name": "☆GUS☆",
+      "content": ".agregarcomando mascota / Compra y cuida tu mascota virtual / comprarmascota,alimentar,daramor / economia / [alimentar/daramor]"
+    },
+    {
+      "role": "user",
+      "name": "☆GUS☆",
+      "content": ".agregarcomando prestamo / Pide moras prestadas con interés / pedir,deuda / economia / <cantidad>"
+    },
+    {
+      "role": "user",
+      "name": "☆GUS☆",
+      "content": ".agregarcomando pagar / Paga tu deuda del préstamo / pagardeuda / economia / <cantidad>"
+    },
+    {
+      "role": "user",
+      "name": "☆GUS☆",
+      "content": "{\"name\": \"ahorcado\", \"desc\": \"Adivina la palabra y gana moras\", \"alias\": [\"/ahorcado\", \"/adivina\"], \"category\": \"economia\"},"
+    },
+    {
+      "role": "user",
+      "name": "☆GUS☆",
+      "content": ". addcmd economy/tinder/import db from \"#db\"\n\nconst RESULTADOS = [\n  { texto: '¡Cita perfecta! Te regalaron un anillo de diamantes 💍', ganancia: 150 },\n  { texto: 'Cita bonita, invitaron helado 🍦', ganancia: 40 },\n  { texto: 'Se confundió de persona y nunca llegó 💔', ganancia: -20 },\n  { texto: 'Pidió que pagues todo y te dejó sin un centavo 💸', ganancia: -50 },\n  { texto: '¡Match de ensueño! Te dieron una fortuna 💰', ganancia: 300 }\n]\n\nexport default {\n  command: ['tinder', 'cita'],\n  alias: ['/tinder', '/cita'],\n  category: 'economia',\n  desc: 'Paga para tener una cita a ciegas',\n  uso: '',\n  run: async ({ msg, sock }) => {\n    const chatId = msg.chat\n    const chat = await db.getChat(chatId)\n    const user = await db.getChatUser(chatId, msg.sender)\n    const botId = sock.user.id.split(':')[0] + '@s.whatsapp.net'\n    const botSettings = await db.getSettings(botId)\n    const monedas = botSettings.currency\n    const costo = 25\n\n    if (chat.adminonly || !chat.rpg)\n      return sock.sendMessage(chatId, { text: mess.comandooff }, { quoted: msg })\n\n    if ((user.coins || 0) < costo)\n      return sock.sendMessage(chatId, { text: `「✦」Necesitas al menos ¥${costo} ${monedas} para una cita` }, { quoted: msg })\n\n    user.coins -= costo\n    const res = RESULTADOS[Math.floor(Math.random() * RESULTADOS.length)]\n    user.coins = Math.max(0, (user.coins || 0) + res.ganancia)\n    await db.updateChatUser(chatId, msg.sender, 'coins', user.coins)\n\n    return sock.sendMessage(chatId, {\n      text: `💘 *CITA A CIEGAS*\\n\\n${res.texto}\\n\\n${res.ganancia >= 0 ? `+¥${res.ganancia}` : `¥${res.ganancia}`} ${monedas}\\nSaldo: ¥${user.coins.toLocaleString()}`\n    }, { quoted: msg })\n  }\n}"
+    },
+    {
+      "role": "assistant",
+      "content": "¡Brooo, qué bacano quedó ese código de Tinder! 💘 Obviooo que esas citas a ciegas van a estar finísimas, ¡ya quiero ver a la gente perdiendo o ganando monedas! 🥳💫🩸"
+    }
+  ],
+  "120363413262177867@g.us": [
+    {
+      "role": "user",
+      "name": "Lyra",
+      "content": "Me salieron unas ronchas bien feas en la jeta jaja"
+    },
+    {
+      "role": "user",
+      "name": "Lyra",
+      "content": "Hola corazón, como estás?"
+    }
   ]
 }
