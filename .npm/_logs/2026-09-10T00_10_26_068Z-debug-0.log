@@ -6,8 +6,8 @@
 5 silly config load:file:/usr/local/etc/npmrc
 6 verbose title npm install
 7 verbose argv "install"
-8 verbose logfile logs-max:10 dir:/home/container/.npm/_logs/2026-09-09T02_53_54_627Z-
-9 verbose logfile /home/container/.npm/_logs/2026-09-09T02_53_54_627Z-debug-0.log
+8 verbose logfile logs-max:10 dir:/home/container/.npm/_logs/2026-09-10T00_10_26_068Z-
+9 verbose logfile /home/container/.npm/_logs/2026-09-10T00_10_26_068Z-debug-0.log
 10 silly logfile start cleaning logs, removing 1 files
 11 silly logfile done cleaning log files
 12 silly packumentCache heap:1822162944 maxSize:455540736 maxEntrySize:227770368
@@ -299,7 +299,7 @@
 15 silly audit   'yt-search': [ '2.13.1' ],
 15 silly audit   zod: [ '3.25.76' ]
 15 silly audit }
-16 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 308ms
+16 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 323ms
 17 silly audit report {
 17 silly audit report   minimatch: [
 17 silly audit report     {
@@ -332,16 +332,16 @@
 17 silly audit report   ]
 17 silly audit report }
 18 silly packumentCache corgi:https://registry.npmjs.org/minimatch cache-miss
-19 http cache https://registry.npmjs.org/minimatch 11ms (cache hit)
+19 http fetch GET 200 https://registry.npmjs.org/minimatch 34ms (cache revalidated)
 20 silly packumentCache corgi:https://registry.npmjs.org/minimatch set size:169442 disposed:false
 21 silly packumentCache corgi:https://registry.npmjs.org/redstar cache-miss
-22 http cache https://registry.npmjs.org/redstar 4ms (cache hit)
+22 http fetch GET 200 https://registry.npmjs.org/redstar 31ms (cache revalidated)
 23 silly packumentCache corgi:https://registry.npmjs.org/redstar set size:1262 disposed:false
 24 silly packumentCache corgi:https://registry.npmjs.org/node-fzf cache-miss
-25 http cache https://registry.npmjs.org/node-fzf 4ms (cache hit)
+25 http fetch GET 200 https://registry.npmjs.org/node-fzf 23ms (cache revalidated)
 26 silly packumentCache corgi:https://registry.npmjs.org/node-fzf set size:42290 disposed:false
 27 silly packumentCache corgi:https://registry.npmjs.org/yt-search cache-miss
-28 http cache https://registry.npmjs.org/yt-search 3ms (cache hit)
+28 http fetch GET 200 https://registry.npmjs.org/yt-search 24ms (cache revalidated)
 29 silly packumentCache corgi:https://registry.npmjs.org/yt-search set size:126336 disposed:false
 30 warn allow-scripts 1 package has install scripts not yet covered by allowScripts:
 30 warn allow-scripts   protobufjs@7.6.6 (postinstall: node scripts/postinstall)
