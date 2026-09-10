@@ -1,0 +1,14 @@
+# Base de datos local — no se sube a GitHub
+database.json
+
+# Sesión del bot
+session/
+auth/
+.wa/
+
+# Archivos temporales
+node_modules/
+tmp/
+temp/
+*.log
+.DS_Store
