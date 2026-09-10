@@ -2,7 +2,7 @@ import fs from 'fs'
 
 export default {
   command: ['restore'],
-  category: 'tools',
+  category: 'owner',
   owner: true, // SOLO OWNER
   run: async ({ msg, args }) => {
     const owner = global.owner?.[0] + '@s.whatsapp.net'
