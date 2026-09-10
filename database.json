@@ -18,11 +18,11 @@
     },
     "51980730680@s.whatsapp.net": {
       "name": "☆GUS☆",
-      "exp": 51093,
+      "exp": 51430,
       "sugCooldown": 1788989094445,
       "level": 22,
       "Subs": 1788914622495,
-      "usedcommands": 1023,
+      "usedcommands": 1031,
       "pasatiempo": "",
       "description": "",
       "marry": "",
@@ -130,11 +130,11 @@
     },
     "5215658414636@s.whatsapp.net": {
       "name": "Santiago",
-      "exp": 11886,
+      "exp": 11961,
       "sugCooldown": 0,
       "level": 10,
       "Subs": 0,
-      "usedcommands": 229,
+      "usedcommands": 230,
       "pasatiempo": "🎧 Escuchar música",
       "description": "SI TE CAES, TE LEVANTO... PERO PRIMERO ME RIO Y LUEGO TE GRABO 🤪🫠",
       "marry": "",
@@ -402,11 +402,11 @@
     },
     "5212225237061@s.whatsapp.net": {
       "name": "👹👹",
-      "exp": 1992,
+      "exp": 2038,
       "sugCooldown": 0,
       "level": 4,
       "Subs": 0,
-      "usedcommands": 43,
+      "usedcommands": 44,
       "pasatiempo": "",
       "description": "",
       "marry": "5216623572734@s.whatsapp.net",
@@ -498,11 +498,11 @@
     },
     "5217297826686@s.whatsapp.net": {
       "name": "    𓍯 𝓨𝓾𝓷𝓪 𓍯",
-      "exp": 2790,
+      "exp": 2874,
       "sugCooldown": 0,
       "level": 5,
       "Subs": 0,
-      "usedcommands": 57,
+      "usedcommands": 58,
       "pasatiempo": "🎧 Escuchar música",
       "description": " ╭── ⋆｡°✩ ──╮\n𝓣𝓾 𝓶𝓲𝓻𝓪𝓭𝓪 𝓭𝓲𝓬𝓮\n𝓵𝓸 𝓺𝓾𝓮 𝓶𝓲𝓼 𝓹𝓪𝓵𝓪𝓫𝓻𝓪𝓼 𝓬𝓪𝓵𝓵𝓪𝓷.\n╰── ✩°｡⋆ ──╯",
       "marry": "",
@@ -6454,11 +6454,11 @@
           "cmds": 6
         },
         "2026-09-09": {
-          "msgs": 614,
-          "cmds": 217
+          "msgs": 616,
+          "cmds": 218
         }
       },
-      "usedTime": "2026-09-10T00:21:57.620Z",
+      "usedTime": "2026-09-10T00:35:28.536Z",
       "warnings": [],
       "chat_id": "120363430974350908@g.us",
       "user_id": "5215658414636@s.whatsapp.net",
@@ -7164,11 +7164,11 @@
           "cmds": 14
         },
         "2026-09-09": {
-          "msgs": 99,
-          "cmds": 11
+          "msgs": 102,
+          "cmds": 12
         }
       },
-      "usedTime": "2026-09-09T21:32:28.067Z",
+      "usedTime": "2026-09-10T00:37:55.536Z",
       "warnings": [],
       "chat_id": "120363430974350908@g.us",
       "user_id": "5212225237061@s.whatsapp.net"
@@ -7439,11 +7439,11 @@
           "cmds": 13
         },
         "2026-09-09": {
-          "msgs": 187,
-          "cmds": 21
+          "msgs": 190,
+          "cmds": 22
         }
       },
-      "usedTime": "2026-09-10T00:21:47.357Z",
+      "usedTime": "2026-09-10T00:35:04.800Z",
       "warnings": [],
       "chat_id": "120363430974350908@g.us",
       "user_id": "5217297826686@s.whatsapp.net"
@@ -9455,7 +9455,7 @@
           "cmds": 0
         },
         "2026-09-09": {
-          "msgs": 6,
+          "msgs": 7,
           "cmds": 0
         }
       },
@@ -9546,7 +9546,7 @@
           "cmds": 6
         },
         "2026-09-09": {
-          "msgs": 88,
+          "msgs": 89,
           "cmds": 14
         }
       },
@@ -9628,7 +9628,7 @@
           "cmds": 0
         },
         "2026-09-09": {
-          "msgs": 69,
+          "msgs": 70,
           "cmds": 10
         }
       },
@@ -9669,7 +9669,7 @@
           "cmds": 0
         },
         "2026-09-09": {
-          "msgs": 49,
+          "msgs": 51,
           "cmds": 0
         }
       },
@@ -10721,7 +10721,7 @@
           "cmds": 0
         },
         "2026-09-09": {
-          "msgs": 15,
+          "msgs": 16,
           "cmds": 0
         }
       },
@@ -13414,11 +13414,11 @@
           "cmds": 105
         },
         "2026-09-09": {
-          "msgs": 141,
-          "cmds": 121
+          "msgs": 149,
+          "cmds": 129
         }
       },
-      "usedTime": "2026-09-10T00:00:07.927Z",
+      "usedTime": "2026-09-10T00:37:58.481Z",
       "warnings": [],
       "chat_id": "120363429990485000@g.us",
       "user_id": "51980730680@s.whatsapp.net",
@@ -15153,7 +15153,7 @@
         "#",
         "."
       ],
-      "commandsejecut": 1816,
+      "commandsejecut": 1827,
       "type": "Sub",
       "link": "https://api.stellarwa.xyz",
       "banner": "https://nube.stellarwa.xyz/rf/Zllhqcb8iUug.jpg",
