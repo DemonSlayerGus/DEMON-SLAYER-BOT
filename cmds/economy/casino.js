@@ -7,7 +7,7 @@ const initDB = () => {
 
 export default {
   command: ['casino', 'apostar'],
-  category: 'economia',
+  category: 'economy',
   run: async ({ msg, sock, args }) => {
     initDB()
     if (!db.data.users[msg.sender]) db.data.users[msg.sender] = { money: 1000 }
